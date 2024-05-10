@@ -1,1 +1,404 @@
-"Hello, World!" 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <style>
+      body {
+        background: #ff99ac;
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+        display: flex; /* Use flexbox to center content vertically and horizontally */
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Ensure body spans the whole viewport height */
+      }
+
+      .box {
+        position: relative;
+      }
+      .box::before {
+        content: "";
+        width: 440px;
+        height: 440px;
+        background-color: white;
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+      }
+      .box-body {
+        position: relative;
+        height: 200px;
+        width: 200px;
+        margin-top: 123.3333333333px;
+        background-color: #ff4d6d;
+        border-bottom-left-radius: 5%;
+        border-bottom-right-radius: 5%;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(#c9184a,#ff4d6d);
+      }
+      .box-body .img{
+        opacity: 0;
+        transform: translateY(0%);
+        transition: all 1.1s ease-in;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .box-body.reset .img {
+        transition: none;
+      }
+
+      .box-body.clicked {
+        cursor: pointer;
+        animation: box-body 1s forwards ease-in-out;
+      }
+      .box-body.clicked .img{
+        opacity: 1;
+        z-index: 0;
+        transform: translateY(-157px);
+      }
+      .box-body.clicked .box-lid {
+        animation: box-lid 1s forwards ease-in-out;
+      }
+      .box-body.clicked .box-bowtie::before {
+        animation: box-bowtie-left 1.1s forwards ease-in-out;
+      }
+      .box-body.clicked .box-bowtie::after {
+        animation: box-bowtie-right 1.1s forwards ease-in-out;
+      }
+      .box-body::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        background: linear-gradient(#ffffff,#ffefa0)
+      }
+      .box-lid {
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 90%;
+        height: 40px;
+        background-color: #ff4d6d;
+        height: 40px;
+        width: 220px;
+        border-radius: 5%;
+        box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.3);
+      }
+      .box-lid::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        background: linear-gradient(#ffefa0,#fff)
+      }
+      .box-bowtie {
+        height: 100%;
+      }
+      .box-bowtie::before, .box-bowtie::after {
+        content: "";
+        width: 83.3333333333px;
+        height: 83.3333333333px;
+        border: 16.6666666667px solid #ffefa0;
+        border-radius: 50% 50% 0 50%;
+        position: absolute;
+        bottom: 99%;
+        z-index: -1;
+      }
+      .box-bowtie::before {
+        left: 50%;
+        transform: translateX(-100%) skew(10deg, 10deg);
+      }
+      .box-bowtie::after {
+        left: 50%;
+        transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+      }
+
+      @keyframes box-lid {
+        0%,
+        42% {
+          transform: translate3d(-50%, 0%, 0) rotate(0deg);
+        }
+        60% {
+          transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+        }
+        90%, 100% {
+          transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+        }
+      }
+
+      @keyframes box-body {
+        0% {
+          transform: translate3d(0%, 0%, 0) rotate(0deg);
+        }
+        25% {
+          transform: translate3d(0%, 25%, 0) rotate(20deg);
+        }
+        50% {
+          transform: translate3d(0%, -15%, 0) rotate(0deg);
+        }
+        70% {
+          transform: translate3d(0%, 0%, 0) rotate(0deg);
+        }
+      }
+
+      @keyframes box-bowtie-right {
+        0%,
+        50%,
+        75% {
+          transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+        }
+        90%,
+        100% {
+          transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+          box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      @keyframes box-bowtie-left {
+        0% {
+          transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+        }
+        50%,
+        75% {
+          transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+        }
+        90%,
+        100% {
+          transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+        }
+      }
+
+      .text-light {
+        color: #f8f9fa !important;
+      }
+      .text-center {
+        text-align: center !important;
+      }
+
+      .h3, h3 {
+        font-size: 1.75rem;
+        margin-bottom: 5rem;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
+
+      .main {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 6rem;
+      }
+
+      img {
+        width: auto;
+        height: 150px;
+      }
+
+      .image-container {
+        display: flex;
+      }
+
+      .balloon {
+        height: 125px;
+        width: 105px;
+        border-radius: 75% 75% 70% 70%;
+        position: relative;
+      }
+
+      .balloon:before {
+        content: "";
+        height: 75px;
+        width: 1px;
+        padding: 1px;
+        background-color: #FDFD96;
+        display: block;
+        position: absolute;
+        top: 125px;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+
+      .balloon:after {
+          content: "▲";
+          text-align: center;
+          display: block;
+          position: absolute;
+          color: inherit;
+          top: 120px;
+          left: 0;
+          right: 0;
+          margin: auto;
+      }
+
+      @keyframes float {
+        from {transform: translateY(100vh);
+        opacity: 1;}
+        to {transform: translateY(-300vh);
+        opacity: 0;}
+      }
+
+      #balloon-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          var count = 200;
+          var defaults = {
+          origin: { y: 0.7 }
+          };
+
+        function loadBalloons() {
+          const balloonContainer = document.getElementById('balloon-container');
+
+          function random(num) {
+            return Math.floor(Math.random() * num);
+          }
+
+          function getRandomStyles() {
+            var r = random(255);
+            var g = random(255);
+            var b = random(255);
+            var mt = random(200);
+            var ml = random(50);
+            var dur = random(5) + 5;
+
+            return `
+            background-color: rgba(${r},${g},${b},0.7);
+            color: rgba(${r},${g},${b},0.7); 
+            box-shadow: inset -7px -3px 10px rgba(${r - 10},${g - 10},${b - 10},0.7);
+            margin: ${mt}px 0 0 ${ml}px;
+            animation: float ${dur}s ease-in infinite;
+            
+            `;
+            }
+
+            function createBalloons(num) {
+            for (var i = num; i > 0; i--) {
+              var balloon = document.createElement("div");
+              balloon.className = "balloon";
+              balloon.style.cssText = getRandomStyles();
+              balloonContainer.append(balloon);
+            }
+            }
+
+            function removeBalloons() {
+            balloonContainer.style.opacity = 0;
+            setTimeout(() => {
+              balloonContainer.remove()
+            }, 500)
+            }
+
+            document.querySelector('.box-body').addEventListener("click", () => {
+              createBalloons(30);
+            });
+            // window.addEventListener("click", () => {
+            //   removeBalloons();
+            // });
+
+        }
+
+        function fire(particleRatio, opts) {
+          window.confetti({
+            ...defaults,
+            ...opts,
+            particleCount: Math.floor(count * particleRatio)
+          });
+        }
+        function fireConfetti() {
+          fire(0.25, {
+            spread: 26,
+            startVelocity: 55,
+          });
+          fire(0.2, {
+            spread: 60,
+          });
+          fire(0.35, {
+            spread: 100,
+            decay: 0.91,
+            scalar: 0.8
+          });
+          fire(0.1, {
+            spread: 120,
+            startVelocity: 25,
+            decay: 0.92,
+            scalar: 1.2
+          });
+          fire(0.1, {
+            spread: 120,
+            startVelocity: 45,
+          });
+        }
+        function triggerAnimation() {
+          var boxBody = document.querySelector('.box-body');
+          var clicked = boxBody.classList.contains('clicked');
+
+          if (!clicked) {
+            boxBody.classList.add('clicked');
+            setTimeout(function() {
+              fireConfetti();
+              loadBalloons();
+            }, 100); // Wait for 100 milliseconds before triggering the animation
+          } else {
+            // Remove the animation class to reset the animation
+            boxBody.classList.remove('clicked');
+            boxBody.classList.add('reset');
+            // Re-trigger the animation
+            setTimeout(function() {
+              boxBody.classList.remove('reset');
+              boxBody.classList.add('clicked');
+            }, 150); // Wait for a short delay to ensure the class is removed before re-adding
+            setTimeout(function() {
+              fireConfetti();
+              loadBalloons();
+            }, 200)
+          }
+      }
+
+        document.querySelector('.box-body').addEventListener('click', function() {
+          triggerAnimation();
+        })
+
+      });
+    </script>
+</head>
+<body>
+<div class="main">
+  <h3 class="text-center text-light my-5"><strong>Klik på boksen!</strong></h3>
+  <div class="box">
+    <div class="box-body">
+      <div class="image-container">
+        <img class="img" src="https://sw12669.sfstatic.io/upload_dir/shop/Kodanska/710535990034.jpg">
+        <img class="img" src="https://sw12669.sfstatic.io/upload_dir/shop/Skaermbillede-2023-05-25-101035.jpg">
+      </div>
+      <div class="box-lid">
+        <div class="box-bowtie"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="balloon-container"></div>
+</body>
+</html>
