@@ -247,7 +247,7 @@
 
       @keyframes float {
         0% {transform: translateY(100vh);}
-        100% {transform: translateY(-600vh);}
+        100% {transform: translateY(-400vh);}
       }
 
       #balloon-container {
@@ -275,6 +275,7 @@
         function loadBalloons() {
           const balloonContainer = document.getElementById('balloon-container');
           const balloons = [];
+          var animationCount = 30;
 
           function random(num) {
             return Math.floor(Math.random() * num);
@@ -303,6 +304,10 @@
               balloon.style.cssText = getRandomStyles();
               balloonContainer.append(balloon);
               balloons.push(balloon);
+
+              balloon.addEventListener('animationend', (target) => {
+                animationCount--;
+              })
             }
 
             function createBalloons(num) {
@@ -317,12 +322,31 @@
               });
             }
 
-            createBalloons(30);
+           
 
-            // Listen for animation end event on the balloon container
-            balloonContainer.addEventListener('animationend', () => {
-              removeBalloons();
-            });
+            function hasChildWithClass(parentElement, className) {
+              const children = parentElement.children;
+              for (let i = 0; i < children.length; i++) {
+                if (children[i].classList.contains(className)) {
+                  return true; // Found a child with the specified class
+                }
+              }
+              return false; // None of the children have the specified class
+            }
+
+
+            function onAnimationEnd() {
+              console.log(animationCount);
+              if (animationCount === 0) {
+                removeBalloons();
+                balloonContainer.removeEventListener('animationend', onAnimationEnd);
+              }
+            }
+            if (!hasChildWithClass(balloonContainer, 'balloon')) {
+              console.log('HERE!');
+              createBalloons(30);
+              balloonContainer.addEventListener('animationend', onAnimationEnd);
+            }
         }
 
         function fire(particleRatio, opts) {
