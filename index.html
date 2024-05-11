@@ -40,6 +40,7 @@
         border-bottom-right-radius: 5%;
         box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.3);
         background: linear-gradient(#c9184a,#ff4d6d);
+        transform-style: preserve-3d;
       }
       .box-body .img{
         opacity: 0;
@@ -210,6 +211,7 @@
 
       .image-container {
         display: flex;
+        transform: translateZ(-10px);
       }
 
       .balloon {
@@ -423,13 +425,12 @@
         <img class="img" src="https://sw12669.sfstatic.io/upload_dir/shop/Kodanska/710535990034.jpg">
         <img class="img" src="https://sw12669.sfstatic.io/upload_dir/shop/Skaermbillede-2023-05-25-101035.jpg">
       </div>
-      <div class="box-lid">
+      <div class="box-lid"> 
         <div class="box-bowtie"></div>
       </div>
     </div>
   </div>
 </div>
-<p style="font-size: 5px; margin-left: 20px;">Asshole</p>
 <div id="balloon-container"></div>
 </body>
 </html>
