@@ -306,10 +306,14 @@
               var balloon = document.createElement("div");
               balloon.className = "balloon";
               balloon.style.cssText = getRandomStyles();
+              balloon.addEventListener('click', (event) => {
+                console.log('Hello, World!');
+                event.target.remove();
+              })
               balloonContainer.append(balloon);
               balloons.push(balloon);
 
-              balloon.addEventListener('animationend', (target) => {
+              balloon.addEventListener('animationend', (event) => {
                 animationCount--;
               })
             }
@@ -340,14 +344,12 @@
 
 
             function onAnimationEnd() {
-              console.log(animationCount);
               if (animationCount === 0) {
                 removeBalloons();
                 balloonContainer.removeEventListener('animationend', onAnimationEnd);
               }
             }
             if (!hasChildWithClass(balloonContainer, 'balloon')) {
-              console.log('HERE!');
               createBalloons(30);
               balloonContainer.addEventListener('animationend', onAnimationEnd);
             }
@@ -414,6 +416,11 @@
         document.querySelector('.box-body').addEventListener('click', function() {
           triggerAnimation();
           document.getElementById('changeText').textContent = 'Glædelig mors dag!'
+          if (!document.body.classList.contains('audioPlaying')) {
+            var tequila = new Audio('./assets/audio/tequila.mp3');
+            tequila.play();
+            document.body.classList.add('audioPlaying');
+          }
         })
 
       });
