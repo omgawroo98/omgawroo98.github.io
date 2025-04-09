@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/omgawroo98/omgawroo98.github.io/static/css/main.fcbc67d0.css",
+    "main.js": "/omgawroo98/omgawroo98.github.io/static/js/main.c4804ef0.js",
+    "index.html": "/omgawroo98/omgawroo98.github.io/index.html",
+    "main.fcbc67d0.css.map": "/omgawroo98/omgawroo98.github.io/static/css/main.fcbc67d0.css.map",
+    "main.c4804ef0.js.map": "/omgawroo98/omgawroo98.github.io/static/js/main.c4804ef0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fcbc67d0.css",
+    "static/js/main.c4804ef0.js"
+  ]
+}
