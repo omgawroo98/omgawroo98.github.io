@@ -1,0 +1,137 @@
+{
+  "meta": { "title": "Omar" },
+
+  "nav": {
+    "menu": "Menü",
+    "intro": "Intro",
+    "about": "Über mich",
+    "works": "Projekte",
+    "contact": "Sag Hallo"
+  },
+
+  "intro": {
+    "welcome": "Willkommen!",
+    "tagline": "Ich bin Omar, \nein Full-Stack-Entwickler, \nder Dinge baut \nin Osnabrück, Deutschland.",
+    "scroll": "scrollen"
+  },
+
+  "social": {
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "youtube": "YouTube",
+    "email": "E-Mail"
+  },
+
+  "about": {
+    "preTitle": "Das bin ich 👋🏻",
+    "description": "Ich bin Full-Stack-Entwickler mit Sitz in Deutschland und einer Leidenschaft für skalierbare, performante Web-Anwendungen. Ich liebe herausfordernde Projekte, die meine Grenzen verschieben und mir erlauben, moderne Technologien zu erkunden.",
+    "downloadCv": "Lebenslauf herunterladen",
+    "expertise": { "title": "Expertise" },
+    "experience": { "title": "Erfahrung" },
+    "education": { "title": "Ausbildung" }
+  },
+
+  "exp": {
+    "fullstack": {
+      "title": "Full-Stack-Softwareentwickler",
+      "desc": "Entwicklung skalierbarer Web-Apps mit React, Tailwind CSS und .NET (C#). Aufbau von UI-Komponenten, Integration von GraphQL und Verwaltung von CI/CD-Pipelines mit GitHub Actions. Kubernetes-Orchestrierung und agile Zusammenarbeit im Scrum-Team."
+    },
+    "intern": {
+      "title": "Praktikum – Technischer Support",
+      "desc": "Technischer Support für Netzkomponenten (Router, Glasfaser, Switches) sowie Einblicke in Rechenzentrumsbetrieb und IT-Infrastruktur."
+    }
+  },
+
+  "edu": {
+    "bsc": {
+      "title": "B.Sc. Wirtschaftsinformatik (dual)",
+      "desc": "Schwerpunkte: Webentwicklung, agile Methoden, Datenbanken und IT-Projektmanagement im kooperativen Studiengang mit Praxisphasen."
+    },
+    "fia": {
+      "title": "Fachinformatiker – Anwendungsentwicklung",
+      "desc": "Praxisintegrierte Ausbildung mit Fokus auf Softwareentwicklung, Netzwerke und Datenbankdesign."
+    },
+    "ita": {
+      "title": "Informationstechnischer Assistent",
+      "desc": "Schulische Ausbildung mit Schwerpunkt Programmierung, Netzwerktechnik und technische Grundlagen."
+    }
+  },
+
+  "works": {
+    "coming": "Bald verfügbar",
+    "heading": "Ich arbeite noch an spannenden Projekten. Schau später wieder vorbei!",
+    "item1": { "cat": "Full-Stack-App", "title": "Habit-Tracker (Bald verfügbar)" },
+    "item2": { "cat": "KI / Backend", "title": "KI-Lebenslauf-Parser (Bald verfügbar)" },
+    "item3": { "cat": "UI / Komponenten", "title": "React Admin-Panel (Bald verfügbar)" },
+    "item4": { "cat": "Dashboard", "title": "Finanz-Tracker (Bald verfügbar)" }
+  },
+
+  "modal1": {
+    "title": "Habit-Tracker (Bald verfügbar)",
+    "desc": "Eine Full-Stack-App, die dabei hilft, tägliche Gewohnheiten mit Streaks, Analysen und Fortschrittsdiagrammen aufzubauen und zu verfolgen.",
+    "cat1": "Branding",
+    "cat2": "Produktdesign"
+  },
+  "modal2": {
+    "title": "KI-Lebenslauf-Parser (Bald verfügbar)",
+    "desc": "Lebenslauf hochladen und mit NLP strukturierte Einblicke erhalten — Fähigkeiten, Rollen und Ausbildung automatisch extrahieren.",
+    "cat1": "KI",
+    "cat2": "Backend"
+  },
+  "modal3": {
+    "title": "React Admin-Dashboard (Bald verfügbar)",
+    "desc": "Ein schlankes, modulares Admin-Dashboard auf React-Basis zur Verwaltung von Nutzern, Inhalten und Analysen über wiederverwendbare Komponenten.",
+    "cat1": "UI",
+    "cat2": "Komponenten"
+  },
+  "modal4": {
+    "title": "Finanz-Tracker (Bald verfügbar)",
+    "desc": "Ein Dashboard, um Ausgaben zu verfolgen, Transaktionen zu kategorisieren und persönliche Finanzen in Echtzeit zu visualisieren.",
+    "cat1": "Dashboard",
+    "cat2": "Analysen"
+  },
+
+  "values": {
+    "preTitle": "Meine Werte",
+    "heading": "Das ist mir wichtig – auf einen Blick!",
+    "clean": {
+      "title": "Sauberer Code",
+      "subtitle": "Lesbar für Menschen, nicht nur Maschinen",
+      "body": "Guter Code ist einfach, selbsterklärend und gut iterierbar. Mit Absicht und Struktur zu schreiben erlaubt Teams schneller zu arbeiten und auch beim Skalieren abgestimmt zu bleiben."
+    },
+    "testing": {
+      "title": "Tests sind wichtig",
+      "subtitle": "Weil Bugs sich nicht ankündigen",
+      "body": "Tests sind kein Luxus, sondern ein Sicherheitsnetz. Sie geben mir Vertrauen schnell und gut zu liefern, Annahmen zu prüfen, Regressionen zu vermeiden und langfristige Stabilität zu unterstützen."
+    },
+    "performance": {
+      "title": "Performance",
+      "subtitle": "Geschwindigkeit ist ein Feature",
+      "body": "Nutzer merken Verzögerungen. Ich lege Wert auf performante, reaktionsschnelle Anwendungen, die sich auch auf schwächeren Geräten flüssig anfühlen. Wenn es langsam ist, ist es kaputt – und ich behebe es."
+    },
+    "detail": {
+      "title": "Liebe zum Detail",
+      "subtitle": "Kleine Dinge machen den Unterschied",
+      "body": "Design steckt im Detail. Von pixelgenauen Layouts bis zu Tastatur-Zugänglichkeit und semantischem Markup – mir geht es um das gesamte Nutzungserlebnis, nicht nur die Oberfläche."
+    }
+  },
+
+  "contact": {
+    "preTitle": "Kontakt",
+    "heading": "Ich freue mich von dir zu hören. \nOb Projekt, Frage oder Tech-Talk – schreib mir gern!",
+    "reach": "Erreichbar unter",
+    "social": {
+      "title": "Social",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "youtube": "YouTube"
+    },
+    "sayHello": "Sag Hallo."
+  },
+
+  "footer": {
+    "thanks": "Danke fürs Scrollen!",
+    "template": "Vorlage von <a href=\"https://themewagon.com\" target=\"_blank\">Themewagon</a> und von mir bearbeitet :)",
+    "backTop": "Nach oben"
+  }
+}

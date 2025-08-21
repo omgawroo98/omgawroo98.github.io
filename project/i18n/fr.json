@@ -1,0 +1,137 @@
+{
+  "meta": { "title": "Omar" },
+
+  "nav": {
+    "menu": "Menu",
+    "intro": "Intro",
+    "about": "À propos",
+    "works": "Projets",
+    "contact": "Dire bonjour"
+  },
+
+  "intro": {
+    "welcome": "Bienvenue !",
+    "tagline": "Je suis Omar, \ndéveloppeur full-stack, \nje construis des choses \nà Osnabrück, en Allemagne.",
+    "scroll": "faire défiler"
+  },
+
+  "social": {
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "youtube": "YouTube",
+    "email": "E-mail"
+  },
+
+  "about": {
+    "preTitle": "C’est moi 👋🏻",
+    "description": "Je suis un développeur full-stack basé en Allemagne, passionné par la création d’applications web évolutives et performantes. J’aime les projets ambitieux qui me poussent à explorer des technologies de pointe.",
+    "downloadCv": "Télécharger le CV",
+    "expertise": { "title": "Expertise" },
+    "experience": { "title": "Expérience" },
+    "education": { "title": "Formation" }
+  },
+
+  "exp": {
+    "fullstack": {
+      "title": "Développeur logiciel full-stack",
+      "desc": "Développement d’applications web évolutives avec React, Tailwind CSS et .NET (C#). Création de composants UI, intégration GraphQL et gestion des pipelines CI/CD avec GitHub Actions. Orchestration Kubernetes et collaboration agile en équipe Scrum."
+    },
+    "intern": {
+      "title": "Stage – Support technique",
+      "desc": "Support technique pour les composants réseau (routeurs, fibre optique, switchs) et aperçu des opérations de centre de données et de l’infrastructure IT."
+    }
+  },
+
+  "edu": {
+    "bsc": {
+      "title": "Licence pro Informatique de gestion (alternance)",
+      "desc": "Axes : développement web, méthodes agiles, bases de données et gestion de projet IT, dans un cursus coopératif avec phases pratiques."
+    },
+    "fia": {
+      "title": "Technicien informatique – Développement d’applications",
+      "desc": "Formation intégrée à la pratique, axée sur le développement logiciel, les réseaux et la conception de bases de données."
+    },
+    "ita": {
+      "title": "Assistant en technologies de l’information",
+      "desc": "Formation scolaire axée sur la programmation, l’ingénierie réseau et les fondamentaux techniques."
+    }
+  },
+
+  "works": {
+    "coming": "Bientôt disponible",
+    "heading": "Je travaille encore sur des projets passionnants. Revenez plus tard !",
+    "item1": { "cat": "App full-stack", "title": "Suivi d’habitudes (Bientôt)" },
+    "item2": { "cat": "IA / Backend", "title": "Parseur de CV avec IA (Bientôt)" },
+    "item3": { "cat": "UI / Composants", "title": "Panneau d’administration React (Bientôt)" },
+    "item4": { "cat": "Tableau de bord", "title": "Suivi des finances (Bientôt)" }
+  },
+
+  "modal1": {
+    "title": "Suivi d’habitudes (Bientôt)",
+    "desc": "Une application full-stack pour créer et suivre des habitudes quotidiennes avec des séries visuelles, des analyses et des graphiques de progression.",
+    "cat1": "Branding",
+    "cat2": "Conception produit"
+  },
+  "modal2": {
+    "title": "Parseur de CV avec IA (Bientôt)",
+    "desc": "Téléversez un CV et obtenez des informations structurées grâce au NLP — extraction automatique des compétences, rôles et formations.",
+    "cat1": "IA",
+    "cat2": "Backend"
+  },
+  "modal3": {
+    "title": "Tableau de bord Admin React (Bientôt)",
+    "desc": "Un tableau de bord admin élégant et modulaire, construit avec React, pour gérer utilisateurs, contenus et analyses via des composants réutilisables.",
+    "cat1": "UI",
+    "cat2": "Composants"
+  },
+  "modal4": {
+    "title": "Suivi des finances (Bientôt)",
+    "desc": "Un tableau de bord pour suivre les dépenses, catégoriser les transactions et visualiser les finances personnelles en temps réel.",
+    "cat1": "Tableau de bord",
+    "cat2": "Analytique"
+  },
+
+  "values": {
+    "preTitle": "Mes valeurs",
+    "heading": "Voilà ce qui compte pour moi !",
+    "clean": {
+      "title": "Code propre",
+      "subtitle": "Lisible par les humains, pas seulement par les machines",
+      "body": "Un bon code est simple, explicite et facile à itérer. Écrire avec intention et structure permet aux équipes d’aller plus vite et de rester alignées, même à l’échelle."
+    },
+    "testing": {
+      "title": "Les tests comptent",
+      "subtitle": "Parce que les bugs ne se présentent pas",
+      "body": "Les tests ne sont pas un luxe. Ils sont un filet de sécurité qui me permet de livrer vite et bien, de valider les hypothèses, d’éviter les régressions et d’assurer la stabilité à long terme."
+    },
+    "performance": {
+      "title": "Performance",
+      "subtitle": "La vitesse est une fonctionnalité",
+      "body": "Les utilisateurs remarquent la latence. Je vise des applications performantes et réactives, fluides même sur des appareils modestes. Si c’est lent, c’est cassé — et je le corrige."
+    },
+    "detail": {
+      "title": "Sens du détail",
+      "subtitle": "Les petites choses font la différence",
+      "body": "Le design est dans les détails. Du pixel-perfect à l’accessibilité clavier et au balisage sémantique, je me soucie de l’expérience complète, pas seulement de la surface."
+    }
+  },
+
+  "contact": {
+    "preTitle": "Contact",
+    "heading": "J’aimerais avoir de vos nouvelles. \nProjet, question ou simple échange tech — écrivez-moi !",
+    "reach": "Me joindre à",
+    "social": {
+      "title": "Réseaux",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "youtube": "YouTube"
+    },
+    "sayHello": "Dire bonjour."
+  },
+
+  "footer": {
+    "thanks": "Merci d’avoir défilé !",
+    "template": "Modèle fourni par <a href=\"https://themewagon.com\" target=\"_blank\">Themewagon</a> et modifié par moi :)",
+    "backTop": "Retour en haut"
+  }
+}
