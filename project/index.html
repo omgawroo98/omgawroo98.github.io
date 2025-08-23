@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="./css/styles.css">
 
     <!-- Favicons (keep in /project or adjust to where they live) -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./resources/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./resources/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./resources/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
     <link rel="manifest" href="../site.webmanifest"><!-- lives at repo root -->
 
 </head>
@@ -601,13 +601,7 @@
 
     <!-- Java Script
     ================================================== -->
-    <script src="src/plugins.js"></script>
-    <script src="src/main.js"></script>
-    <!-- i18next + http‑backend + language‑detector (CDN) -->
-    <script src="https://unpkg.com/i18next@23.7.4/i18next.min.js" defer></script>
-    <script src="https://unpkg.com/i18next-http-backend@2.3.1/i18nextHttpBackend.min.js" defer></script>
-    <script src="https://unpkg.com/i18next-browser-languagedetector@7.1.1/i18nextBrowserLanguageDetector.min.js"
-        defer></script>
+    <script type="module" src="src/main.js"></script>
     <!-- your init helper -->
     <script type="module" src="src/i18n-init.js"></script>
 
