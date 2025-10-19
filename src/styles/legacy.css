@@ -4269,6 +4269,68 @@ img.u-pull-left {
     fill: white;
 }
 
+/* -------------------------------------------------------------
+ * language switcher inside main-nav
+ * ----------------------------------------------------------- */
+.main-nav .lang-switcher {
+    /* ① width = just what it needs */
+    flex: 0 0 auto;
+    /*   instead of flex:1 like the others */
+    position: relative;
+}
+
+.main-nav .lang-switcher select {
+    /* ② reset generic form rules */
+    margin: 0;
+    /*   kill bottom margin that made it taller */
+    width: 100%;
+    height: var(--header-height);
+    line-height: var(--header-height);
+
+    /* ③ mimic link styling */
+    display: block;
+    padding: 0 2.4rem;
+    /* same L-R padding as .main-nav a */
+    background: transparent;
+    border: none;
+    font: 400 10px/var(--header-height) var(--font-1);
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+    appearance: none;
+    /* hide default arrow */
+    transition: color .3s;
+}
+
+.main-nav .lang-switcher select:focus,
+.main-nav .lang-switcher select:hover {
+    color: var(--color-1);
+    /* same hover colour as links */
+    outline: none;
+}
+
+/* ④ custom arrow */
+.main-nav .lang-switcher::after {
+    content: "";
+    position: absolute;
+
+    /* move it farther right           ↓ */
+    right: 1rem;
+    /* was 1.6rem */
+
+    /* perfectly center it vertically  ↓ */
+    top: 48%;
+    transform: translateY(-50%) rotate(45deg);
+
+    width: 6px;
+    height: 6px;
+    border-right: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    pointer-events: none;
+}
+
+
 /* ------------------------------------------------------------------- 
  * responsive:
  * footer

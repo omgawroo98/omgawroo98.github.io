@@ -1,0 +1,7 @@
+@import "swiper/swiper-bundle.css";
+@import "./vendor/swiper.css";
+@import "basiclightbox/dist/basicLightbox.min.css";
+@import "prismjs/themes/prism-tomorrow.css";
+
+
+@import "./legacy.css";

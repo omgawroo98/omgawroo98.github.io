@@ -1,0 +1,888 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+
+import myPic from "../assets/MY-Picture.jpg";
+import habitPng from "../assets/portfolio/habit-tracker.png";
+import cvPng from "../assets/portfolio/cv.png";
+import dashPng from "../assets/portfolio/dashboard.png";
+import financePng from "../assets/portfolio/finance-tracker.png";
+
+import codeSvg from "../assets/avatars/code-xml.svg";
+import bugSvg from "../assets/avatars/bug-off.svg";
+import gaugeSvg from "../assets/avatars/gauge.svg";
+import sparkleSvg from "../assets/avatars/sparkle.svg";
+
+import cvPdf from "../assets/omar-elbakri-cv.pdf";
+---
+
+<BaseLayout title="Omar">
+	<!-- # preloader -->
+	<div id="preloader">
+		<div id="loader"></div>
+	</div>
+
+	<!-- # page wrap -->
+	<div class="s-pagewrap">
+		<div class="circles">
+			<span></span><span></span><span></span><span></span><span></span>
+		</div>
+
+		<!-- ## header -->
+		<header class="s-header">
+			<div class="header-mobile">
+				<span class="mobile-home-link"><a href="/">Omar.</a></span>
+				<a class="mobile-menu-toggle" href="#0"
+					><span data-i18n="nav.menu">Menu</span></a
+				>
+			</div>
+
+			<div class="row wide main-nav-wrap">
+				<nav class="column lg-12 main-nav">
+					<ul>
+						<li><a href="/" class="home-link">Omar.</a></li>
+						<li class="current">
+							<a
+								href="#intro"
+								class="smoothscroll"
+								data-i18n="nav.intro">Intro</a
+							>
+						</li>
+						<li>
+							<a
+								href="#about"
+								class="smoothscroll"
+								data-i18n="nav.about">About</a
+							>
+						</li>
+						<li>
+							<a
+								href="#works"
+								class="smoothscroll"
+								data-i18n="nav.works">Works</a
+							>
+						</li>
+						<li>
+							<a
+								href="#contact"
+								class="smoothscroll"
+								data-i18n="nav.contact">Say Hello</a
+							>
+						</li>
+						<li class="lang-switcher">
+							<select
+								id="langSwitch"
+								class="nav-select"
+								aria-label="Language"
+							>
+								<option value="en">EN</option>
+								<option value="de">DE</option>
+								<option value="fr">FR</option>
+								<option value="it">IT</option>
+							</select>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<!-- ## main -->
+		<main class="s-content">
+			<!-- ### intro -->
+			<section id="intro" class="s-intro target-section">
+				<div class="row intro-content wide">
+					<div class="column">
+						<div
+							class="text-pretitle with-line"
+							data-i18n="intro.welcome"
+						>
+							Welcome!
+						</div>
+						<h1 class="text-huge-title" data-i18n="intro.tagline">
+							I am Omar, <br /> a full-stack developer <br /> building
+							things <br /> in Osnabrück, Germany.
+						</h1>
+					</div>
+
+					<ul class="intro-social">
+						<li>
+							<a
+								href="https://www.linkedin.com/in/omar-elbakri-345171349/"
+								target="_blank"
+								data-i18n="social.linkedin">LinkedIn</a
+							>
+						</li>
+						<li>
+							<a
+								href="https://github.com/omgawroo98"
+								target="_blank"
+								data-i18n="social.github">GitHub</a
+							>
+						</li>
+						<li>
+							<a
+								href="https://www.youtube.com/channel/UCXQ-JiemL1d4UkBP_PS7ZKA"
+								target="_blank"
+								data-i18n="social.youtube">YouTube</a
+							>
+						</li>
+						<li>
+							<a
+								href="mailto:omar.elbakri00@gmail.com"
+								target="_blank"
+								data-i18n="social.email">Email</a
+							>
+						</li>
+					</ul>
+				</div>
+
+				<a
+					href="#about"
+					class="intro-scrolldown smoothscroll"
+					aria-label="scroll"
+					data-i18n-attr='{"aria-label":"intro.scroll"}'
+				>
+					<svg
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg"
+						fill-rule="evenodd"
+						clip-rule="evenodd"
+					>
+						<path
+							d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"
+						></path>
+					</svg>
+				</a>
+			</section>
+
+			<!-- ### about -->
+			<section id="about" class="s-about target-section">
+				<div class="row about-info wide" data-animate-block>
+					<div class="column lg-6 md-12 about-info__pic-block">
+						<Image
+							src={myPic}
+							alt=""
+							class="about-info__pic"
+							loading="lazy"
+							decoding="async"
+							sizes="(min-width: 1024px) 50vw, 100vw"
+							widths={[480, 720, 960, 1200]}
+						/>
+					</div>
+
+					<div class="column lg-6 md-12">
+						<div class="about-info__text">
+							<h2
+								class="text-pretitle with-line"
+								data-animate-el
+								data-i18n="about.preTitle"
+							>
+								This is Me 👋🏻
+							</h2>
+							<p
+								class="attention-getter"
+								data-animate-el
+								data-i18n="about.description"
+							>
+								I'm a Full Stack Developer based in Germany with
+								a passion for building scalable,
+								high-performance web applications. I thrive on
+								challenging projects that push my boundaries and
+								allow me to explore cutting-edge technologies.
+							</p>
+							<a
+								href={cvPdf}
+								target="_blank"
+								class="btn btn--medium u-fullwidth"
+								data-animate-el
+								data-i18n="about.downloadCv"
+								download>Download CV</a
+							>
+						</div>
+					</div>
+				</div>
+
+				<div class="row about-expertise" data-animate-block>
+					<div class="column lg-12">
+						<h2
+							class="text-pretitle"
+							data-animate-el
+							data-i18n="about.expertise.title"
+						>
+							Expertise
+						</h2>
+						<ul class="skills-list h1" data-animate-el>
+							I design and build scalable, user-focused web
+							applications from front to back.
+						</ul>
+					</div>
+				</div>
+
+				<div class="row about-timelines" data-animate-block>
+					<div class="column lg-6 tab-12">
+						<h2
+							class="text-pretitle"
+							data-animate-el
+							data-i18n="about.experience.title"
+						>
+							Experience
+						</h2>
+
+						<div class="timeline" data-animate-el>
+							<div class="timeline__block">
+								<div class="timeline__bullet"></div>
+								<div class="timeline__header">
+									<h4
+										class="timeline__title"
+										data-i18n="exp.fullstack.title"
+									>
+										Full Stack Softwareentwickler
+									</h4>
+									<h5 class="timeline__meta">
+										123erfasst GmbH, Lohne
+									</h5>
+									<p class="timeline__timeframe">
+										August 2023 – Present
+									</p>
+								</div>
+								<div class="timeline__desc">
+									<p data-i18n="exp.fullstack.desc">
+										Developing scalable web applications
+										with React, Tailwind CSS and .NET (C#).
+										Building UI components, integrating
+										GraphQL, and managing CI/CD pipelines
+										with GitHub Actions. Kubernetes‑based
+										orchestration and agile collaboration in
+										a Scrum team.
+									</p>
+								</div>
+							</div>
+
+							<div class="timeline__block">
+								<div class="timeline__bullet"></div>
+								<div class="timeline__header">
+									<h4
+										class="timeline__title"
+										data-i18n="exp.intern.title"
+									>
+										Internship – Technical Support
+									</h4>
+									<h5 class="timeline__meta">
+										LWLCOM, Bremen
+									</h5>
+									<p class="timeline__timeframe">
+										October 2021 – November 2021
+									</p>
+								</div>
+								<div class="timeline__desc">
+									<p data-i18n="exp.intern.desc">
+										Technical support for network components
+										(routers, fiber optics, switches) and
+										insights into data‑center operations and
+										IT infrastructure.
+									</p>
+								</div>
+							</div>
+						</div>
+						<!-- end timeline -->
+					</div>
+					<!-- end column -->
+
+					<div class="column lg-6 tab-12">
+						<h2
+							class="text-pretitle"
+							data-animate-el
+							data-i18n="about.education.title"
+						>
+							Education
+						</h2>
+
+						<div class="timeline" data-animate-el>
+							<div class="timeline__block">
+								<div class="timeline__bullet"></div>
+								<div class="timeline__header">
+									<h4
+										class="timeline__title"
+										data-i18n="edu.bsc.title"
+									>
+										B.Sc. Business Informatics (dual)
+									</h4>
+									<h5 class="timeline__meta">
+										Osnabrück University of Applied Sciences
+									</h5>
+									<p class="timeline__timeframe">
+										August 2023 – expected July 2026
+									</p>
+								</div>
+								<div class="timeline__desc">
+									<p data-i18n="edu.bsc.desc">
+										Focus on web development, agile
+										methodologies, databases, and IT project
+										management in a cooperative study
+										program with practical phases.
+									</p>
+								</div>
+							</div>
+
+							<div class="timeline__block">
+								<div class="timeline__bullet"></div>
+								<div class="timeline__header">
+									<h4
+										class="timeline__title"
+										data-i18n="edu.fia.title"
+									>
+										IT Specialist – Application Development
+									</h4>
+									<h5 class="timeline__meta">
+										IHK Osnabrück
+									</h5>
+									<p class="timeline__timeframe">
+										August 2023 – Juni 2025
+									</p>
+								</div>
+								<div class="timeline__desc">
+									<p data-i18n="edu.fia.desc">
+										Practice‑integrated training focusing on
+										software development, networking, and
+										database design.
+									</p>
+								</div>
+							</div>
+
+							<div class="timeline__block">
+								<div class="timeline__bullet"></div>
+								<div class="timeline__header">
+									<h4
+										class="timeline__title"
+										data-i18n="edu.ita.title"
+									>
+										Information Technology Assistant
+									</h4>
+									<h5 class="timeline__meta">
+										Schulzentrum Utbremen
+									</h5>
+									<p class="timeline__timeframe">
+										Juli 2020 – Juli 2022
+									</p>
+								</div>
+								<div class="timeline__desc">
+									<p data-i18n="edu.ita.desc">
+										School‑based training with emphasis on
+										programming, network engineering, and
+										technical fundamentals.
+									</p>
+								</div>
+							</div>
+						</div>
+						<!-- end timeline -->
+					</div>
+					<!-- end column -->
+				</div>
+			</section>
+
+			<!-- ### works -->
+			<section id="works" class="s-works target-section">
+				<div class="row works-portfolio">
+					<div class="column lg-12" data-animate-block>
+						<h2
+							class="text-pretitle"
+							data-animate-el
+							data-i18n="works.coming"
+						>
+							Coming Soon
+						</h2>
+						<p class="h1" data-animate-el data-i18n="works.heading">
+							Still working on some exciting projects. Tune back
+							in later!
+						</p>
+
+						<ul
+							class="folio-list row block-lg-one-half block-stack-on-1000"
+						>
+							<li class="folio-list__item column" data-animate-el>
+								<a
+									class="folio-list__item-link"
+									href="#modal-01"
+								>
+									<div class="folio-list__item-pic">
+										<Image
+											src={habitPng}
+											alt=""
+											loading="lazy"
+											decoding="async"
+											sizes="(min-width: 1000px) 50vw, 100vw"
+											widths={[360, 600, 900, 1200]}
+										/>
+									</div>
+									<div class="folio-list__item-text">
+										<div
+											class="folio-list__item-cat"
+											data-i18n="works.item1.cat"
+										>
+											Full Stack App
+										</div>
+										<div
+											class="folio-list__item-title"
+											data-i18n="works.item1.title"
+										>
+											Habit Tracker (Coming Soon)
+										</div>
+									</div>
+								</a>
+							</li>
+
+							<li class="folio-list__item column" data-animate-el>
+								<a
+									class="folio-list__item-link"
+									href="#modal-02"
+								>
+									<div class="folio-list__item-pic">
+										<Image
+											src={cvPng}
+											alt=""
+											loading="lazy"
+											decoding="async"
+											sizes="(min-width: 1000px) 50vw, 100vw"
+											widths={[360, 600, 900, 1200]}
+										/>
+									</div>
+									<div class="folio-list__item-text">
+										<div
+											class="folio-list__item-cat"
+											data-i18n="works.item2.cat"
+										>
+											AI / Backend
+										</div>
+										<div
+											class="folio-list__item-title"
+											data-i18n="works.item2.title"
+										>
+											AI CV Parser (Coming Soon)
+										</div>
+									</div>
+								</a>
+							</li>
+
+							<li class="folio-list__item column" data-animate-el>
+								<a
+									class="folio-list__item-link"
+									href="#modal-03"
+								>
+									<div class="folio-list__item-pic">
+										<Image
+											src={dashPng}
+											alt=""
+											loading="lazy"
+											decoding="async"
+											sizes="(min-width: 1000px) 50vw, 100vw"
+											widths={[360, 600, 900, 1200]}
+										/>
+									</div>
+									<div class="folio-list__item-text">
+										<div
+											class="folio-list__item-cat"
+											data-i18n="works.item3.cat"
+										>
+											UI / Components
+										</div>
+										<div
+											class="folio-list__item-title"
+											data-i18n="works.item3.title"
+										>
+											React Admin Panel (Coming Soon)
+										</div>
+									</div>
+								</a>
+							</li>
+
+							<li class="folio-list__item column" data-animate-el>
+								<a
+									class="folio-list__item-link"
+									href="#modal-04"
+								>
+									<div class="folio-list__item-pic">
+										<Image
+											src={financePng}
+											alt=""
+											loading="lazy"
+											decoding="async"
+											sizes="(min-width: 1000px) 50vw, 100vw"
+											widths={[360, 600, 900, 1200]}
+										/>
+									</div>
+									<div class="folio-list__item-text">
+										<div
+											class="folio-list__item-cat"
+											data-i18n="works.item4.cat"
+										>
+											Dashboard
+										</div>
+										<div
+											class="folio-list__item-title"
+											data-i18n="works.item4.title"
+										>
+											Finance Tracker (Coming Soon)
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<!-- Modals (use same imported images) -->
+					<div id="modal-01" hidden>
+						<div class="modal-popup">
+							<Image
+								src={habitPng}
+								alt=""
+								widths={[640, 960, 1280]}
+								sizes="100vw"
+							/>
+							<div class="modal-popup__desc">
+								<h5 data-i18n="modal1.title">
+									Habit Tracker (Coming Soon)
+								</h5>
+								<p data-i18n="modal1.desc">
+									A full stack app to help users build and
+									track daily habits with visual streaks,
+									analytics, and progress charts.
+								</p>
+								<ul class="modal-popup__cat">
+									<li data-i18n="modal1.cat1">Branding</li>
+									<li data-i18n="modal1.cat2">
+										Product Design
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div id="modal-02" hidden>
+						<div class="modal-popup">
+							<Image
+								src={cvPng}
+								alt=""
+								widths={[640, 960, 1280]}
+								sizes="100vw"
+							/>
+							<div class="modal-popup__desc">
+								<h5 data-i18n="modal2.title">
+									AI CV Parser (Coming Soon)
+								</h5>
+								<p data-i18n="modal2.desc">
+									Upload a resume and get structured insights
+									using NLP — extract skills, roles, and
+									education automatically.
+								</p>
+								<ul class="modal-popup__cat">
+									<li data-i18n="modal2.cat1">AI</li>
+									<li data-i18n="modal2.cat2">Backend</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div id="modal-03" hidden>
+						<div class="modal-popup">
+							<Image
+								src={dashPng}
+								alt=""
+								widths={[640, 960, 1280]}
+								sizes="100vw"
+							/>
+							<div class="modal-popup__desc">
+								<h5 data-i18n="modal3.title">
+									React Admin Dashboard (Coming Soon)
+								</h5>
+								<p data-i18n="modal3.desc">
+									A sleek, modular admin dashboard built with
+									React to manage users, content, and
+									analytics via reusable components.
+								</p>
+								<ul class="modal-popup__cat">
+									<li data-i18n="modal3.cat1">UI</li>
+									<li data-i18n="modal3.cat2">Components</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div id="modal-04" hidden>
+						<div class="modal-popup">
+							<Image
+								src={financePng}
+								alt=""
+								widths={[640, 960, 1280]}
+								sizes="100vw"
+							/>
+							<div class="modal-popup__desc">
+								<h5 data-i18n="modal4.title">
+									Finance Tracker (Coming Soon)
+								</h5>
+								<p data-i18n="modal4.desc">
+									A dashboard to track expenses, categorize
+									transactions, and visualize personal
+									finances in real time.
+								</p>
+								<ul class="modal-popup__cat">
+									<li data-i18n="modal4.cat1">Dashboard</li>
+									<li data-i18n="modal4.cat2">Analytics</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row testimonials">
+					<div class="column lg-12" data-animate-block>
+						<h2 class="text-pretitle" data-animate-el>My Values</h2>
+						<p class="h1" data-animate-el>
+							Here's everything I value at a glance!
+						</p>
+
+						<div
+							class="swiper-container testimonial-slider"
+							data-animate-el
+						>
+							<div class="swiper-wrapper">
+								<div
+									class="testimonial-slider__slide swiper-slide"
+								>
+									<div class="testimonial-slider__author">
+										<img
+											src={codeSvg.src}
+											alt="Author image"
+											class="testimonial-slider__avatar"
+										/>
+										<cite class="testimonial-slider__cite">
+											<strong>Clean Code</strong>
+											<span
+												>Readable by humans, not just
+												machines</span
+											>
+										</cite>
+									</div>
+									<p>
+										I believe great code is simple,
+										self-explanatory, and easy to iterate
+										on. Writing with intention and structure
+										means teams can move faster and stay
+										aligned, even as things scale.
+									</p>
+								</div>
+								<!-- end testimonial-slider__slide -->
+
+								<div
+									class="testimonial-slider__slide swiper-slide"
+								>
+									<div class="testimonial-slider__author">
+										<img
+											src={bugSvg.src}
+											alt="Author image"
+											class="testimonial-slider__avatar"
+										/>
+										<cite class="testimonial-slider__cite">
+											<strong>Testing Matters</strong>
+											<span
+												>Because bugs don’t announce
+												themselves</span
+											>
+										</cite>
+									</div>
+									<p>
+										I don’t treat tests as a luxury. They're
+										a safety net that gives me confidence to
+										ship fast and ship well. I use testing
+										to validate assumptions, catch
+										regressions, and support long-term
+										stability.
+									</p>
+								</div>
+								<!-- end testimonial-slider__slide -->
+
+								<div
+									class="testimonial-slider__slide swiper-slide"
+								>
+									<div class="testimonial-slider__author">
+										<img
+											src={gaugeSvg.src}
+											alt="Author image"
+											class="testimonial-slider__avatar"
+										/>
+										<cite class="testimonial-slider__cite">
+											<strong>Performance</strong>
+											<span>Speed is a feature</span>
+										</cite>
+									</div>
+									<p>
+										Users notice lag. I focus on performant,
+										responsive applications that feel snappy
+										and smooth, even on lower-end devices.
+										If it’s slow, it’s broken and I fix it.
+									</p>
+								</div>
+								<!-- end testimonial-slider__slide -->
+
+								<div
+									class="testimonial-slider__slide swiper-slide"
+								>
+									<div class="testimonial-slider__author">
+										<img
+											src={sparkleSvg.src}
+											alt="Author image"
+											class="testimonial-slider__avatar"
+										/>
+										<cite class="testimonial-slider__cite">
+											<strong>Attention to Detail</strong>
+											<span
+												>Tiny things make a big
+												difference</span
+											>
+										</cite>
+									</div>
+									<p>
+										Design is in the details. From
+										pixel-perfect layouts to keyboard
+										accessibility and semantic markup, I
+										care deeply about the complete user
+										experience and not just the surface.
+									</p>
+								</div>
+								<!-- end testimonial-slider__slide -->
+							</div>
+							<!-- end swiper-wrapper -->
+
+							<div class="swiper-pagination"></div>
+						</div>
+						<!-- end swiper-container -->
+					</div>
+					<!-- end column -->
+				</div>
+				<!-- end row testimonials -->
+			</section>
+			<!-- end s-works -->
+
+			<!-- ### contact
+            ================================================== -->
+			<section id="contact" class="s-contact target-section">
+				<div class="row contact-top">
+					<div class="column lg-12">
+						<h2 class="text-pretitle" data-i18n="contact.preTitle">
+							Get In Touch
+						</h2>
+
+						<p class="h1" data-i18n="contact.heading">
+							I’d love to hear from you. <br />
+							Whether it's a project, a question, or just tech talk
+							- feel free to message me!
+						</p>
+					</div>
+				</div>
+				<!-- end contact-top -->
+
+				<div class="row contact-bottom">
+					<div
+						class="column lg-4 md-6 tab-12 stack-on-550 contact-block"
+					>
+						<h3 class="text-pretitle" data-i18n="contact.reach">
+							Reach me at
+						</h3>
+						<p class="contact-links">
+							<a
+								href="mailto:omar.elbakri00@gmail.com"
+								class="mailtoui">omar.elbakri00@gmail.com</a
+							>
+							<br />
+							<a href="tel:+4915140329170">+49 1514 0329170</a>
+						</p>
+					</div>
+					<div
+						class="column lg-3.8 md-5 tab-6 stack-on-550 contact-block"
+					>
+						<h3
+							class="text-pretitle"
+							data-i18n="contact.social.title"
+						>
+							Social
+						</h3>
+						<ul class="contact-social">
+							<li>
+								<a
+									href="https://www.linkedin.com/in/omar-elbakri-345171349/"
+									target="_blank"
+									data-i18n="contact.social.linkedin"
+									>LinkedIn</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://github.com/omgawroo98"
+									target="_blank"
+									data-i18n="contact.social.github">GitHub</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://www.youtube.com/channel/UCXQ-JiemL1d4UkBP_PS7ZKA"
+									target="_blank"
+									data-i18n="contact.social.youtube"
+									>YouTube</a
+								>
+							</li>
+						</ul>
+					</div>
+					<div class="column lg-3.8 md-12 contact-block">
+						<a
+							href="mailto:omar.elbakri00@gmail.com"
+							class="mailtoui btn btn--medium u-fullwidth contact-btn"
+							data-i18n="contact.sayHello">Say Hello.</a
+						>
+					</div>
+				</div>
+				<!-- end contact-bottom -->
+			</section>
+			<!-- end contact -->
+		</main>
+		<!-- end s-content -->
+
+		<!-- ## footer
+        ================================================== -->
+		<footer class="s-footer">
+			<div class="row">
+				<div class="column ss-copyright">
+					<span data-i18n="footer.thanks">Thanks for scrolling!</span>
+					<span data-i18n="footer.template"
+						>Template provided by <a
+							href="https://themewagon.com"
+							target="_blank">Themewagon</a
+						> and edited by me :)</span
+					>
+				</div>
+
+				<div class="ss-go-top">
+					<a
+						class="smoothscroll"
+						title="Back to Top"
+						href="#top"
+						data-i18n-attr='{"title":"footer.backTop"}'
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+						>
+							<path
+								d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"
+							></path>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</footer>
+		<!-- end s-footer -->
+	</div>
+	<!-- end -s-pagewrap -->
+</BaseLayout>
