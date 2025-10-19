@@ -1,10 +1,7 @@
-
-/* ---------- 2) Vendor CSS via packages (preferred) */
 @import "swiper/swiper-bundle.css";
+@import "./vendor/swiper.css";
 @import "basiclightbox/dist/basicLightbox.min.css";
 @import "prismjs/themes/prism-tomorrow.css";
 
-/* If you had local copies of those, remove duplicates and pick ONE source. */
 
-/* ---------- 3) Your legacy/theme CSS */
 @import "./legacy.css";

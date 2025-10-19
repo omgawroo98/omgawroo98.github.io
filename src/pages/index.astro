@@ -640,18 +640,8 @@ import cvPdf from "../assets/omar-elbakri-cv.pdf";
 
 				<div class="row testimonials">
 					<div class="column lg-12" data-animate-block>
-						<h2
-							class="text-pretitle"
-							data-animate-el
-							data-i18n="values.preTitle"
-						>
-							My Values
-						</h2>
-						<p
-							class="h1"
-							data-animate-el
-							data-i18n="values.heading"
-						>
+						<h2 class="text-pretitle" data-animate-el>My Values</h2>
+						<p class="h1" data-animate-el>
 							Here's everything I value at a glance!
 						</p>
 
@@ -670,23 +660,22 @@ import cvPdf from "../assets/omar-elbakri-cv.pdf";
 											class="testimonial-slider__avatar"
 										/>
 										<cite class="testimonial-slider__cite">
-											<strong
-												data-i18n="values.clean.title"
-												>Clean Code</strong
-											>
+											<strong>Clean Code</strong>
 											<span
-												data-i18n="values.clean.subtitle"
 												>Readable by humans, not just
 												machines</span
 											>
 										</cite>
 									</div>
-									<p data-i18n="values.clean.body">
+									<p>
 										I believe great code is simple,
 										self-explanatory, and easy to iterate
-										on…
+										on. Writing with intention and structure
+										means teams can move faster and stay
+										aligned, even as things scale.
 									</p>
 								</div>
+								<!-- end testimonial-slider__slide -->
 
 								<div
 									class="testimonial-slider__slide swiper-slide"
@@ -698,21 +687,23 @@ import cvPdf from "../assets/omar-elbakri-cv.pdf";
 											class="testimonial-slider__avatar"
 										/>
 										<cite class="testimonial-slider__cite">
-											<strong
-												data-i18n="values.testing.title"
-												>Testing Matters</strong
-											>
+											<strong>Testing Matters</strong>
 											<span
-												data-i18n="values.testing.subtitle"
 												>Because bugs don’t announce
 												themselves</span
 											>
 										</cite>
 									</div>
-									<p data-i18n="values.testing.body">
-										I don’t treat tests as a luxury…
+									<p>
+										I don’t treat tests as a luxury. They're
+										a safety net that gives me confidence to
+										ship fast and ship well. I use testing
+										to validate assumptions, catch
+										regressions, and support long-term
+										stability.
 									</p>
 								</div>
+								<!-- end testimonial-slider__slide -->
 
 								<div
 									class="testimonial-slider__slide swiper-slide"
@@ -724,20 +715,18 @@ import cvPdf from "../assets/omar-elbakri-cv.pdf";
 											class="testimonial-slider__avatar"
 										/>
 										<cite class="testimonial-slider__cite">
-											<strong
-												data-i18n="values.performance.title"
-												>Performance</strong
-											>
-											<span
-												data-i18n="values.performance.subtitle"
-												>Speed is a feature</span
-											>
+											<strong>Performance</strong>
+											<span>Speed is a feature</span>
 										</cite>
 									</div>
-									<p data-i18n="values.performance.body">
-										Users notice lag…
+									<p>
+										Users notice lag. I focus on performant,
+										responsive applications that feel snappy
+										and smooth, even on lower-end devices.
+										If it’s slow, it’s broken and I fix it.
 									</p>
 								</div>
+								<!-- end testimonial-slider__slide -->
 
 								<div
 									class="testimonial-slider__slide swiper-slide"
@@ -749,27 +738,34 @@ import cvPdf from "../assets/omar-elbakri-cv.pdf";
 											class="testimonial-slider__avatar"
 										/>
 										<cite class="testimonial-slider__cite">
-											<strong
-												data-i18n="values.detail.title"
-												>Attention to Detail</strong
-											>
+											<strong>Attention to Detail</strong>
 											<span
-												data-i18n="values.detail.subtitle"
 												>Tiny things make a big
 												difference</span
 											>
 										</cite>
 									</div>
-									<p data-i18n="values.detail.body">
-										Design is in the details…
+									<p>
+										Design is in the details. From
+										pixel-perfect layouts to keyboard
+										accessibility and semantic markup, I
+										care deeply about the complete user
+										experience and not just the surface.
 									</p>
 								</div>
+								<!-- end testimonial-slider__slide -->
 							</div>
+							<!-- end swiper-wrapper -->
+
 							<div class="swiper-pagination"></div>
 						</div>
+						<!-- end swiper-container -->
 					</div>
+					<!-- end column -->
 				</div>
+				<!-- end row testimonials -->
 			</section>
+			<!-- end s-works -->
 
 			<!-- ### contact
             ================================================== -->
@@ -892,8 +888,4 @@ import cvPdf from "../assets/omar-elbakri-cv.pdf";
 		<!-- end s-footer -->
 	</div>
 	<!-- end -s-pagewrap -->
-
-	<!-- JavaScript (kept as-is for now) -->
-	<!-- <script type="module" src="/src/main.js"></script> -->
-	<!-- <script type="module" src="/src/i18n-init.js"></script> -->
 </BaseLayout>
