@@ -4289,7 +4289,7 @@ img.u-pull-left {
 
     /* ③ mimic link styling */
     display: block;
-    padding: 0 2.4rem;
+    padding: 0 1.5rem;
     /* same L-R padding as .main-nav a */
     background: transparent;
     border: none;

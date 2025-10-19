@@ -1,20 +1,20 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
-import myPic from "../assets/MY-Picture.jpg";
-import habitPng from "../assets/portfolio/habit-tracker.png";
-import cvPng from "../assets/portfolio/cv.png";
-import dashPng from "../assets/portfolio/dashboard.png";
-import financePng from "../assets/portfolio/finance-tracker.png";
+import myPic from "../../assets/MY-Picture.jpg";
+import habitPng from "../../assets/portfolio/habit-tracker.png";
+import cvPng from "../../assets/portfolio/cv.png";
+import dashPng from "../../assets/portfolio/dashboard.png";
+import financePng from "../../assets/portfolio/finance-tracker.png";
 
-import codeSvg from "../assets/avatars/code-xml.svg";
-import bugSvg from "../assets/avatars/bug-off.svg";
-import gaugeSvg from "../assets/avatars/gauge.svg";
-import sparkleSvg from "../assets/avatars/sparkle.svg";
+import codeSvg from "../../assets/avatars/code-xml.svg";
+import bugSvg from "../../assets/avatars/bug-off.svg";
+import gaugeSvg from "../../assets/avatars/gauge.svg";
+import sparkleSvg from "../../assets/avatars/sparkle.svg";
 
-import cvPdf from "../assets/omar-elbakri-cv.pdf";
+import cvPdf from "../../assets/omar-elbakri-cv.pdf";
 
 const LOCALES = [
 	{ code: "en", label: "EN" },
@@ -58,20 +58,21 @@ const items = LOCALES.map(({ code, label }) => ({
 							<a href="#intro" class="smoothscroll">Intro</a>
 						</li>
 						<li>
-							<a href="#about" class="smoothscroll">About</a>
+							<a href="#about" class="smoothscroll">À propos</a>
 						</li>
 						<li>
-							<a href="#works" class="smoothscroll">Works</a>
+							<a href="#works" class="smoothscroll">Projets</a>
 						</li>
 						<li>
-							<a href="#contact" class="smoothscroll">Say Hello</a
+							<a href="#contact" class="smoothscroll"
+								>Dire bonjour</a
 							>
 						</li>
 						<li class="lang-switcher">
 							<select
 								id="langSwitch"
 								class="nav-select"
-								aria-label="Language"
+								aria-label="Langue"
 							>
 								{
 									items.map(({ code, label, url }) => (
@@ -112,10 +113,12 @@ const items = LOCALES.map(({ code, label }) => ({
 			<section id="intro" class="s-intro target-section">
 				<div class="row intro-content wide">
 					<div class="column">
-						<div class="text-pretitle with-line">Welcome!</div>
+						<div class="text-pretitle with-line">
+							Bienvenue&nbsp;!
+						</div>
 						<h1 class="text-huge-title">
-							I am Omar, <br /> a full-stack developer <br /> building
-							things <br /> in Osnabrück, Germany.
+							Je suis Omar, <br /> développeur full-stack, <br /> je
+							construis des choses <br /> à Osnabrück, en Allemagne.
 						</h1>
 					</div>
 
@@ -150,7 +153,7 @@ const items = LOCALES.map(({ code, label }) => ({
 				<a
 					href="#about"
 					class="intro-scrolldown smoothscroll"
-					aria-label="scroll"
+					aria-label="faire défiler"
 				>
 					<svg
 						width="24"
@@ -185,21 +188,22 @@ const items = LOCALES.map(({ code, label }) => ({
 					<div class="column lg-6 md-12">
 						<div class="about-info__text">
 							<h2 class="text-pretitle with-line" data-animate-el>
-								This is Me 👋🏻
+								C’est moi 👋🏻
 							</h2>
 							<p class="attention-getter" data-animate-el>
-								I'm a Full Stack Developer based in Germany with
-								a passion for building scalable,
-								high-performance web applications. I thrive on
-								challenging projects that push my boundaries and
-								allow me to explore cutting-edge technologies.
+								Je suis développeur full-stack basé en
+								Allemagne, passionné par la création
+								d’applications web évolutives et performantes.
+								J’aime les projets exigeants qui repoussent mes
+								limites et me permettent d’explorer des
+								technologies de pointe.
 							</p>
 							<a
 								href={cvPdf}
 								target="_blank"
 								class="btn btn--medium u-fullwidth"
 								data-animate-el
-								download>Download CV</a
+								download>Télécharger le CV</a
 							>
 						</div>
 					</div>
@@ -207,10 +211,13 @@ const items = LOCALES.map(({ code, label }) => ({
 
 				<div class="row about-expertise" data-animate-block>
 					<div class="column lg-12">
-						<h2 class="text-pretitle" data-animate-el>Expertise</h2>
+						<h2 class="text-pretitle" data-animate-el>
+							Compétences
+						</h2>
 						<ul class="skills-list h1" data-animate-el>
-							I design and build scalable, user-focused web
-							applications from front to back.
+							Je conçois et développe des applications web
+							évolutives et centrées utilisateur, du front au
+							back.
 						</ul>
 					</div>
 				</div>
@@ -218,7 +225,7 @@ const items = LOCALES.map(({ code, label }) => ({
 				<div class="row about-timelines" data-animate-block>
 					<div class="column lg-6 tab-12">
 						<h2 class="text-pretitle" data-animate-el>
-							Experience
+							Expérience
 						</h2>
 
 						<div class="timeline" data-animate-el>
@@ -226,24 +233,24 @@ const items = LOCALES.map(({ code, label }) => ({
 								<div class="timeline__bullet"></div>
 								<div class="timeline__header">
 									<h4 class="timeline__title">
-										Full Stack Softwareentwickler
+										Développeur logiciel full-stack
 									</h4>
 									<h5 class="timeline__meta">
 										123erfasst GmbH, Lohne
 									</h5>
 									<p class="timeline__timeframe">
-										August 2023 – Present
+										Août 2023 – Aujourd’hui
 									</p>
 								</div>
 								<div class="timeline__desc">
 									<p>
-										Developing scalable web applications
-										with React, Tailwind CSS and .NET (C#).
-										Building UI components, integrating
-										GraphQL, and managing CI/CD pipelines
-										with GitHub Actions. Kubernetes‑based
-										orchestration and agile collaboration in
-										a Scrum team.
+										Développement d’applications web
+										évolutives avec React, Tailwind CSS et
+										.NET (C#). Construction de composants
+										UI, intégration de GraphQL et gestion
+										des pipelines CI/CD avec GitHub Actions.
+										Orchestration Kubernetes et
+										collaboration agile en équipe Scrum.
 									</p>
 								</div>
 							</div>
@@ -252,21 +259,22 @@ const items = LOCALES.map(({ code, label }) => ({
 								<div class="timeline__bullet"></div>
 								<div class="timeline__header">
 									<h4 class="timeline__title">
-										Internship – Technical Support
+										Stage – Support technique
 									</h4>
 									<h5 class="timeline__meta">
-										LWLCOM, Bremen
+										LWLCOM, Brême
 									</h5>
 									<p class="timeline__timeframe">
-										October 2021 – November 2021
+										Octobre 2021 – Novembre 2021
 									</p>
 								</div>
 								<div class="timeline__desc">
 									<p>
-										Technical support for network components
-										(routers, fiber optics, switches) and
-										insights into data‑center operations and
-										IT infrastructure.
+										Support technique pour des composants
+										réseau (routeurs, fibre optique,
+										switches) et aperçu des opérations de
+										centre de données et de l’infrastructure
+										IT.
 									</p>
 								</div>
 							</div>
@@ -276,28 +284,31 @@ const items = LOCALES.map(({ code, label }) => ({
 					<!-- end column -->
 
 					<div class="column lg-6 tab-12">
-						<h2 class="text-pretitle" data-animate-el>Education</h2>
+						<h2 class="text-pretitle" data-animate-el>Formation</h2>
 
 						<div class="timeline" data-animate-el>
 							<div class="timeline__block">
 								<div class="timeline__bullet"></div>
 								<div class="timeline__header">
 									<h4 class="timeline__title">
-										B.Sc. Business Informatics (dual)
+										B.Sc. Informatique de gestion
+										(alternance)
 									</h4>
 									<h5 class="timeline__meta">
-										Osnabrück University of Applied Sciences
+										Université des sciences appliquées
+										d’Osnabrück
 									</h5>
 									<p class="timeline__timeframe">
-										August 2023 – expected July 2026
+										Août 2023 – prévu pour juillet 2026
 									</p>
 								</div>
 								<div class="timeline__desc">
 									<p>
-										Focus on web development, agile
-										methodologies, databases, and IT project
-										management in a cooperative study
-										program with practical phases.
+										Accent sur le développement web, les
+										méthodologies agiles, les bases de
+										données et la gestion de projet IT dans
+										un cursus coopératif avec phases
+										pratiques.
 									</p>
 								</div>
 							</div>
@@ -306,20 +317,22 @@ const items = LOCALES.map(({ code, label }) => ({
 								<div class="timeline__bullet"></div>
 								<div class="timeline__header">
 									<h4 class="timeline__title">
-										IT Specialist – Application Development
+										Spécialiste IT – Développement
+										d’applications
 									</h4>
 									<h5 class="timeline__meta">
 										IHK Osnabrück
 									</h5>
 									<p class="timeline__timeframe">
-										August 2023 – Juni 2025
+										Août 2023 – Juin 2025
 									</p>
 								</div>
 								<div class="timeline__desc">
 									<p>
-										Practice‑integrated training focusing on
-										software development, networking, and
-										database design.
+										Formation intégrée à la pratique axée
+										sur le développement logiciel, le
+										networking et la conception de bases de
+										données.
 									</p>
 								</div>
 							</div>
@@ -328,20 +341,21 @@ const items = LOCALES.map(({ code, label }) => ({
 								<div class="timeline__bullet"></div>
 								<div class="timeline__header">
 									<h4 class="timeline__title">
-										Information Technology Assistant
+										Assistant en technologies de
+										l’information
 									</h4>
 									<h5 class="timeline__meta">
 										Schulzentrum Utbremen
 									</h5>
 									<p class="timeline__timeframe">
-										Juli 2020 – Juli 2022
+										Juillet 2020 – Juillet 2022
 									</p>
 								</div>
 								<div class="timeline__desc">
 									<p>
-										School‑based training with emphasis on
-										programming, network engineering, and
-										technical fundamentals.
+										Formation scolaire mettant l’accent sur
+										la programmation, l’ingénierie réseau et
+										les fondamentaux techniques.
 									</p>
 								</div>
 							</div>
@@ -357,11 +371,11 @@ const items = LOCALES.map(({ code, label }) => ({
 				<div class="row works-portfolio">
 					<div class="column lg-12" data-animate-block>
 						<h2 class="text-pretitle" data-animate-el>
-							Coming Soon
+							Bientôt disponible
 						</h2>
 						<p class="h1" data-animate-el>
-							Still working on some exciting projects. Tune back
-							in later!
+							Je travaille encore sur quelques projets
+							passionnants. Revenez plus tard&nbsp;!
 						</p>
 
 						<ul
@@ -384,10 +398,10 @@ const items = LOCALES.map(({ code, label }) => ({
 									</div>
 									<div class="folio-list__item-text">
 										<div class="folio-list__item-cat">
-											Full Stack App
+											Application full-stack
 										</div>
 										<div class="folio-list__item-title">
-											Habit Tracker (Coming Soon)
+											Suivi d’habitudes (bientôt)
 										</div>
 									</div>
 								</a>
@@ -410,10 +424,10 @@ const items = LOCALES.map(({ code, label }) => ({
 									</div>
 									<div class="folio-list__item-text">
 										<div class="folio-list__item-cat">
-											AI / Backend
+											IA / Back-end
 										</div>
 										<div class="folio-list__item-title">
-											AI CV Parser (Coming Soon)
+											Analyseur de CV par IA (bientôt)
 										</div>
 									</div>
 								</a>
@@ -436,10 +450,11 @@ const items = LOCALES.map(({ code, label }) => ({
 									</div>
 									<div class="folio-list__item-text">
 										<div class="folio-list__item-cat">
-											UI / Components
+											UI / Composants
 										</div>
 										<div class="folio-list__item-title">
-											React Admin Panel (Coming Soon)
+											Panneau d’administration React
+											(bientôt)
 										</div>
 									</div>
 								</a>
@@ -462,10 +477,10 @@ const items = LOCALES.map(({ code, label }) => ({
 									</div>
 									<div class="folio-list__item-text">
 										<div class="folio-list__item-cat">
-											Dashboard
+											Tableau de bord
 										</div>
 										<div class="folio-list__item-title">
-											Finance Tracker (Coming Soon)
+											Suivi des finances (bientôt)
 										</div>
 									</div>
 								</a>
@@ -483,15 +498,16 @@ const items = LOCALES.map(({ code, label }) => ({
 								sizes="100vw"
 							/>
 							<div class="modal-popup__desc">
-								<h5>Habit Tracker (Coming Soon)</h5>
+								<h5>Suivi d’habitudes (bientôt)</h5>
 								<p>
-									A full stack app to help users build and
-									track daily habits with visual streaks,
-									analytics, and progress charts.
+									Une application full-stack pour aider les
+									utilisateurs à construire et suivre des
+									habitudes quotidiennes avec séries, analyses
+									et graphiques de progression.
 								</p>
 								<ul class="modal-popup__cat">
-									<li>Branding</li>
-									<li>Product Design</li>
+									<li>Identité de marque</li>
+									<li>Design produit</li>
 								</ul>
 							</div>
 						</div>
@@ -506,15 +522,16 @@ const items = LOCALES.map(({ code, label }) => ({
 								sizes="100vw"
 							/>
 							<div class="modal-popup__desc">
-								<h5>AI CV Parser (Coming Soon)</h5>
+								<h5>Analyseur de CV par IA (bientôt)</h5>
 								<p>
-									Upload a resume and get structured insights
-									using NLP — extract skills, roles, and
-									education automatically.
+									Téléversez un CV et obtenez des informations
+									structurées grâce au NLP - extraction
+									automatique des compétences, des rôles et de
+									la formation.
 								</p>
 								<ul class="modal-popup__cat">
-									<li>AI</li>
-									<li>Backend</li>
+									<li>IA</li>
+									<li>Back-end</li>
 								</ul>
 							</div>
 						</div>
@@ -529,15 +546,16 @@ const items = LOCALES.map(({ code, label }) => ({
 								sizes="100vw"
 							/>
 							<div class="modal-popup__desc">
-								<h5>React Admin Dashboard (Coming Soon)</h5>
+								<h5>React Admin Dashboard (bientôt)</h5>
 								<p>
-									A sleek, modular admin dashboard built with
-									React to manage users, content, and
-									analytics via reusable components.
+									Un tableau de bord d’administration élégant
+									et modulaire, construit avec React pour
+									gérer utilisateurs, contenu et analyses via
+									des composants réutilisables.
 								</p>
 								<ul class="modal-popup__cat">
 									<li>UI</li>
-									<li>Components</li>
+									<li>Composants</li>
 								</ul>
 							</div>
 						</div>
@@ -552,15 +570,15 @@ const items = LOCALES.map(({ code, label }) => ({
 								sizes="100vw"
 							/>
 							<div class="modal-popup__desc">
-								<h5>Finance Tracker (Coming Soon)</h5>
+								<h5>Suivi des finances (bientôt)</h5>
 								<p>
-									A dashboard to track expenses, categorize
-									transactions, and visualize personal
-									finances in real time.
+									Un tableau de bord pour suivre les dépenses,
+									catégoriser les transactions et visualiser
+									les finances personnelles en temps réel.
 								</p>
 								<ul class="modal-popup__cat">
-									<li>Dashboard</li>
-									<li>Analytics</li>
+									<li>Tableau de bord</li>
+									<li>Analyse</li>
 								</ul>
 							</div>
 						</div>
@@ -569,9 +587,12 @@ const items = LOCALES.map(({ code, label }) => ({
 
 				<div class="row testimonials">
 					<div class="column lg-12" data-animate-block>
-						<h2 class="text-pretitle" data-animate-el>My Values</h2>
+						<h2 class="text-pretitle" data-animate-el>
+							Mes valeurs
+						</h2>
 						<p class="h1" data-animate-el>
-							Here's everything I value at a glance!
+							Voici, en un coup d’œil, ce qui compte pour
+							moi&nbsp;!
 						</p>
 
 						<div
@@ -589,19 +610,19 @@ const items = LOCALES.map(({ code, label }) => ({
 											class="testimonial-slider__avatar"
 										/>
 										<cite class="testimonial-slider__cite">
-											<strong>Clean Code</strong>
+											<strong>Code propre</strong>
 											<span
-												>Readable by humans, not just
-												machines</span
+												>Lisible par des humains, pas
+												seulement par des machines</span
 											>
 										</cite>
 									</div>
 									<p>
-										I believe great code is simple,
-										self-explanatory, and easy to iterate
-										on. Writing with intention and structure
-										means teams can move faster and stay
-										aligned, even as things scale.
+										Je crois qu’un bon code est simple,
+										auto-explicatif et facile à itérer.
+										Écrire avec intention et structure
+										permet aux équipes d’avancer plus vite
+										et de rester alignées, même à l’échelle.
 									</p>
 								</div>
 								<!-- end testimonial-slider__slide -->
@@ -616,20 +637,20 @@ const items = LOCALES.map(({ code, label }) => ({
 											class="testimonial-slider__avatar"
 										/>
 										<cite class="testimonial-slider__cite">
-											<strong>Testing Matters</strong>
+											<strong>Les tests comptent</strong>
 											<span
-												>Because bugs don’t announce
-												themselves</span
+												>Parce que les bugs ne se
+												présentent pas d’eux-mêmes</span
 											>
 										</cite>
 									</div>
 									<p>
-										I don’t treat tests as a luxury. They're
-										a safety net that gives me confidence to
-										ship fast and ship well. I use testing
-										to validate assumptions, catch
-										regressions, and support long-term
-										stability.
+										Je ne traite pas les tests comme un
+										luxe. C’est un filet de sécurité qui me
+										donne la confiance pour livrer vite et
+										bien. J’utilise les tests pour valider
+										les hypothèses, capturer les régressions
+										et soutenir la stabilité à long terme.
 									</p>
 								</div>
 								<!-- end testimonial-slider__slide -->
@@ -645,14 +666,19 @@ const items = LOCALES.map(({ code, label }) => ({
 										/>
 										<cite class="testimonial-slider__cite">
 											<strong>Performance</strong>
-											<span>Speed is a feature</span>
+											<span
+												>La vitesse est une
+												fonctionnalité</span
+											>
 										</cite>
 									</div>
 									<p>
-										Users notice lag. I focus on performant,
-										responsive applications that feel snappy
-										and smooth, even on lower-end devices.
-										If it’s slow, it’s broken and I fix it.
+										Les utilisateurs remarquent la latence.
+										Je me concentre sur des applications
+										performantes et réactives, agréables et
+										fluides, même sur des appareils peu
+										puissants. Si c’est lent, c’est cassé —
+										et je le corrige.
 									</p>
 								</div>
 								<!-- end testimonial-slider__slide -->
@@ -667,19 +693,20 @@ const items = LOCALES.map(({ code, label }) => ({
 											class="testimonial-slider__avatar"
 										/>
 										<cite class="testimonial-slider__cite">
-											<strong>Attention to Detail</strong>
+											<strong>Sens du détail</strong>
 											<span
-												>Tiny things make a big
-												difference</span
+												>Les petites choses font une
+												grande différence</span
 											>
 										</cite>
 									</div>
 									<p>
-										Design is in the details. From
-										pixel-perfect layouts to keyboard
-										accessibility and semantic markup, I
-										care deeply about the complete user
-										experience and not just the surface.
+										Le design est dans les détails. Des
+										maquettes pixel-perfect à
+										l’accessibilité clavier et au balisage
+										semantique, je me soucie de toute
+										l’expérience utilisateur, pas seulement
+										du vernis.
 									</p>
 								</div>
 								<!-- end testimonial-slider__slide -->
@@ -701,12 +728,12 @@ const items = LOCALES.map(({ code, label }) => ({
 			<section id="contact" class="s-contact target-section">
 				<div class="row contact-top">
 					<div class="column lg-12">
-						<h2 class="text-pretitle">Get In Touch</h2>
+						<h2 class="text-pretitle">Contactez-moi</h2>
 
 						<p class="h1">
-							I’d love to hear from you. <br />
-							Whether it's a project, a question, or just tech talk
-							- feel free to message me!
+							J’adorerais avoir de vos nouvelles. <br />
+							Projet, question ou simple discussion tech - n’hésitez
+							pas à m’écrire&nbsp;!
 						</p>
 					</div>
 				</div>
@@ -716,7 +743,7 @@ const items = LOCALES.map(({ code, label }) => ({
 					<div
 						class="column lg-4 md-6 tab-12 stack-on-550 contact-block"
 					>
-						<h3 class="text-pretitle">Reach me at</h3>
+						<h3 class="text-pretitle">Me joindre à</h3>
 						<p class="contact-links">
 							<a
 								href="mailto:omar.elbakri00@gmail.com"
@@ -729,7 +756,7 @@ const items = LOCALES.map(({ code, label }) => ({
 					<div
 						class="column lg-3.8 md-5 tab-6 stack-on-550 contact-block"
 					>
-						<h3 class="text-pretitle">Social</h3>
+						<h3 class="text-pretitle">Réseaux</h3>
 						<ul class="contact-social">
 							<li>
 								<a
@@ -755,7 +782,7 @@ const items = LOCALES.map(({ code, label }) => ({
 						<a
 							href="mailto:omar.elbakri00@gmail.com"
 							class="mailtoui btn btn--medium u-fullwidth contact-btn"
-							>Say Hello.</a
+							>Dites bonjour.</a
 						>
 					</div>
 				</div>
@@ -770,17 +797,17 @@ const items = LOCALES.map(({ code, label }) => ({
 		<footer class="s-footer">
 			<div class="row">
 				<div class="column ss-copyright">
-					<span>Thanks for scrolling!</span>
+					<span>Merci d’avoir fait défiler&nbsp;!</span>
 					<span
-						>Template provided by <a
+						>Template fourni par <a
 							href="https://themewagon.com"
 							target="_blank">Themewagon</a
-						> and edited by me :)</span
+						> et modifié par moi :)</span
 					>
 				</div>
 
 				<div class="ss-go-top">
-					<a class="smoothscroll" title="Back to Top" href="#top">
+					<a class="smoothscroll" title="Retour en haut" href="#top">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
