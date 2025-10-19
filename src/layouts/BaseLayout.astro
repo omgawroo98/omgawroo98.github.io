@@ -1,0 +1,62 @@
+---
+import "../styles/global.css";
+interface Props {
+    title?: string;
+    description?: string;
+    lang?: string;
+    htmlClass?: string;
+}
+const {
+    title = "Omar",
+    description = "",
+    lang = "en",
+    htmlClass = "no-js ss-preload",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang} class={htmlClass}>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>{title}</title>
+        <meta name="description" content={description} />
+
+        <!-- CSS automatically included from import -->
+
+        <!-- Favicons -->
+        <link rel="icon" href="/favicon.ico" />
+
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        <!-- extra head slot if you ever need it -->
+        <slot name="head" />
+        <script type="module">
+            import "/src/scripts/main.js";
+        </script>
+    </head>
+
+    <!-- Your scripts (order matters: vendor first, then your code) -->
+
+    <body id="top">
+        <slot />
+    </body>
+</html>
