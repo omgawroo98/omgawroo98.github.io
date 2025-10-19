@@ -7,5 +7,6 @@ export default defineConfig({
     locales: ["es", "en", "pt-br"],
     defaultLocale: "en",
   },
-  site: 'https://omgawroo98.github.io',
+  site: 'https://omar-elbakri.com',
+  base: '/',
 });
