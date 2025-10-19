@@ -7,4 +7,5 @@ export default defineConfig({
     locales: ["es", "en", "pt-br"],
     defaultLocale: "en",
   },
+  site: 'https://omgawroo98.github.io',
 });
