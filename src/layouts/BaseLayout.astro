@@ -46,12 +46,10 @@ const {
             href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-
+        
+        <script src="/src/scripts/main.js"></script>
         <!-- extra head slot if you ever need it -->
         <slot name="head" />
-        <script type="module">
-            import "/src/scripts/main.js";
-        </script>
     </head>
 
     <!-- Your scripts (order matters: vendor first, then your code) -->
