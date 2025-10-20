@@ -1,4 +1,4 @@
-# My Personal Website - Omar
+# My Personal Website - [Omar](omar-elbakri.com)
 
 A fast, multi-language personal site built with **Astro** and **TypeScript**.  
 Content includes an intro/hero, about, portfolio, values/testimonials slider, and a contact section.
@@ -13,7 +13,6 @@ Content includes an intro/hero, about, portfolio, values/testimonials slider, an
 - GitHub Actions
 
 ---
-
 ## Quick start
 
 ### Prerequisites
