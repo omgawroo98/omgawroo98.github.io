@@ -1,4 +1,4 @@
-# Personal Website — Omar
+# My Personal Website - Omar
 
 A fast, multi-language personal site built with **Astro** and **TypeScript**.  
 Content includes an intro/hero, about, portfolio, values/testimonials slider, and a contact section.
