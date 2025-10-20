@@ -1,4 +1,4 @@
-# My Personal Website - [Omar](omar-elbakri.com)
+# My Personal Website - [Omar](https://omar-elbakri.com/)
 
 A fast, multi-language personal site built with **Astro** and **TypeScript**.  
 Content includes an intro/hero, about, portfolio, values/testimonials slider, and a contact section.
