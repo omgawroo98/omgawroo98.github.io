@@ -3340,6 +3340,10 @@ img.u-pull-left {
         transition: background .2s, color .2s;
     }
 
+    .lang-mobile__menu li {
+        padding: 0;
+    }
+
     .lang-mobile__item:hover,
     .lang-mobile__item:focus-visible {
         background: #222;
