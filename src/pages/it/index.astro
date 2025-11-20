@@ -1,10 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
-import { getRelativeLocaleUrl } from "astro:i18n";
 
 import myPic from "../../assets/MY-Picture.jpg";
-import habitPng from "../../assets/portfolio/habit-tracker.png";
+import pizza from "../../assets/portfolio/pizza.png";
 import cvPng from "../../assets/portfolio/cv.png";
 import dashPng from "../../assets/portfolio/dashboard.png";
 import financePng from "../../assets/portfolio/finance-tracker.png";
@@ -15,20 +14,7 @@ import gaugeSvg from "../../assets/avatars/gauge.svg";
 import sparkleSvg from "../../assets/avatars/sparkle.svg";
 
 import cvPdf from "../../assets/omar-elbakri-cv.pdf";
-
-const LOCALES = [
-	{ code: "en", label: "EN" },
-	{ code: "de", label: "DE" },
-	{ code: "fr", label: "FR" },
-	{ code: "it", label: "IT" },
-];
-
-// For each locale, get the URL to *this page* in that locale
-const items = LOCALES.map(({ code, label }) => ({
-	code,
-	label,
-	url: getRelativeLocaleUrl(code), // current page, different locale
-}));
+import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
 ---
 
 <BaseLayout title="Omar">
@@ -47,7 +33,14 @@ const items = LOCALES.map(({ code, label }) => ({
 		<header class="s-header">
 			<div class="header-mobile">
 				<span class="mobile-home-link"><a href="/">Omar.</a></span>
-				<a class="mobile-menu-toggle" href="#0"><span>Menu</span></a>
+				<div class="header-controls">
+					<LanguageSwitcher
+						variant="icon"
+						className="lang-switcher-mobile"
+					/>
+					<a class="mobile-menu-toggle" href="#0"><span>Menu</span></a
+					>
+				</div>
 			</div>
 
 			<div class="row wide main-nav-wrap">
@@ -66,29 +59,8 @@ const items = LOCALES.map(({ code, label }) => ({
 						<li>
 							<a href="#contact" class="smoothscroll">Scrivimi</a>
 						</li>
-						<li class="lang-switcher">
-							<select
-								id="langSwitch"
-								class="nav-select"
-								aria-label="Lingua"
-							>
-								{
-									items.map(({ code, label, url }) => (
-										<option
-											value={url}
-											selected={
-												Astro.url.pathname.startsWith(
-													`/${code}/`,
-												) ||
-												Astro.url.pathname ===
-													`/${code}`
-											}
-										>
-											{label}
-										</option>
-									))
-								}
-							</select>
+						<li class="lang-switcher-desktop">
+							<LanguageSwitcher />
 						</li>
 
 						<script is:inline>
@@ -362,12 +334,13 @@ const items = LOCALES.map(({ code, label }) => ({
 			<section id="works" class="s-works target-section">
 				<div class="row works-portfolio">
 					<div class="column lg-12" data-animate-block>
-						<h2 class="text-pretitle" data-animate-el>In arrivo</h2>
+						<h2 class="text-pretitle" data-animate-el>
+							Il mio lavoro 🛠️
+						</h2>
 						<p class="h1" data-animate-el>
-							Sto ancora lavorando ad alcuni progetti
-							entusiasmanti. Torna più tardi!
+							Ecco a cosa ho lavorato finora e cosa ho in
+							programma!
 						</p>
-
 						<ul
 							class="folio-list row block-lg-one-half block-stack-on-1000"
 						>
@@ -378,7 +351,7 @@ const items = LOCALES.map(({ code, label }) => ({
 								>
 									<div class="folio-list__item-pic">
 										<Image
-											src={habitPng}
+											src={pizza}
 											alt=""
 											loading="lazy"
 											decoding="async"
@@ -391,7 +364,8 @@ const items = LOCALES.map(({ code, label }) => ({
 											App full stack
 										</div>
 										<div class="folio-list__item-title">
-											Habit Tracker (in arrivo)
+											Simulatore di bandito con più armi
+											Pizza
 										</div>
 									</div>
 								</a>
@@ -481,23 +455,33 @@ const items = LOCALES.map(({ code, label }) => ({
 					<div id="modal-01" hidden>
 						<div class="modal-popup">
 							<Image
-								src={habitPng}
+								src={pizza}
 								alt=""
 								widths={[640, 960, 1280]}
 								sizes="100vw"
 							/>
 							<div class="modal-popup__desc">
-								<h5>Habit Tracker (in arrivo)</h5>
+								<h5>
+									Simulatore di bandito con più armi Pizza
+								</h5>
 								<p>
-									Un’app full stack per aiutare gli utenti a
-									costruire e monitorare abitudini quotidiane
-									con serie visive, analisi e grafici dei
-									progressi.
+									Un simulatore full-stack che visualizza gli
+									algoritmi multi-armed bandit attraverso un
+									esperimento interattivo sui condimenti della
+									pizza. Gli utenti possono configurare i tipi
+									di bandit, caricare algoritmi personalizzati
+									e confrontare le prestazioni in tempo reale.
 								</p>
 								<ul class="modal-popup__cat">
-									<li>Branding</li>
-									<li>Design del prodotto</li>
+									<li>Full-Stack</li>
 								</ul>
+
+								<a
+									href="https://github.com/kevinkeller021204/bandit"
+									target="_blank"
+									class="modal-popup__details"
+									>Link al progetto</a
+								>
 							</div>
 						</div>
 					</div>

@@ -1,10 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
-import { getRelativeLocaleUrl } from "astro:i18n";
 
 import myPic from "../assets/MY-Picture.jpg";
-import habitPng from "../assets/portfolio/habit-tracker.png";
+import pizza from "../assets/portfolio/pizza.png";
 import cvPng from "../assets/portfolio/cv.png";
 import dashPng from "../assets/portfolio/dashboard.png";
 import financePng from "../assets/portfolio/finance-tracker.png";
@@ -15,20 +14,8 @@ import gaugeSvg from "../assets/avatars/gauge.svg";
 import sparkleSvg from "../assets/avatars/sparkle.svg";
 
 import cvPdf from "../assets/omar-elbakri-cv.pdf";
+import LanguageSwitcher from "../components/LanguageSwitcher.astro";
 
-const LOCALES = [
-	{ code: "en", label: "EN" },
-	{ code: "de", label: "DE" },
-	{ code: "fr", label: "FR" },
-	{ code: "it", label: "IT" },
-];
-
-// For each locale, get the URL to *this page* in that locale
-const items = LOCALES.map(({ code, label }) => ({
-	code,
-	label,
-	url: getRelativeLocaleUrl(code), // current page, different locale
-}));
 ---
 
 <BaseLayout title="Omar">
@@ -47,7 +34,15 @@ const items = LOCALES.map(({ code, label }) => ({
 		<header class="s-header">
 			<div class="header-mobile">
 				<span class="mobile-home-link"><a href="/">Omar.</a></span>
-				<a class="mobile-menu-toggle" href="#0"><span>Menu</span></a>
+				<div class="header-controls">
+					<LanguageSwitcher
+						variant="icon"
+						className="lang-switcher-mobile"
+					/>
+					<a class="mobile-menu-toggle" href="#0">
+						<span>Menu</span>
+					</a>
+				</div>
 			</div>
 
 			<div class="row wide main-nav-wrap">
@@ -67,29 +62,8 @@ const items = LOCALES.map(({ code, label }) => ({
 							<a href="#contact" class="smoothscroll">Say Hello</a
 							>
 						</li>
-						<li class="lang-switcher">
-							<select
-								id="langSwitch"
-								class="nav-select"
-								aria-label="Language"
-							>
-								{
-									items.map(({ code, label, url }) => (
-										<option
-											value={url}
-											selected={
-												Astro.url.pathname.startsWith(
-													`/${code}/`,
-												) ||
-												Astro.url.pathname ===
-													`/${code}`
-											}
-										>
-											{label}
-										</option>
-									))
-								}
-							</select>
+						<li class="lang-switcher-desktop">
+							<LanguageSwitcher />
 						</li>
 
 						<script is:inline>
@@ -207,7 +181,9 @@ const items = LOCALES.map(({ code, label }) => ({
 
 				<div class="row about-expertise" data-animate-block>
 					<div class="column lg-12">
-						<h2 class="text-pretitle" data-animate-el>Expertise</h2>
+						<h2 class="text-pretitle with-line" data-animate-el>
+							Expertise
+						</h2>
 						<ul class="skills-list h1" data-animate-el>
 							I design and build scalable, user-focused web
 							applications from front to back.
@@ -356,12 +332,12 @@ const items = LOCALES.map(({ code, label }) => ({
 			<section id="works" class="s-works target-section">
 				<div class="row works-portfolio">
 					<div class="column lg-12" data-animate-block>
-						<h2 class="text-pretitle" data-animate-el>
-							Coming Soon
+						<h2 class="text-pretitle with-line" data-animate-el>
+							My Work 🛠️
 						</h2>
 						<p class="h1" data-animate-el>
-							Still working on some exciting projects. Tune back
-							in later!
+							This is what I've worked on so far and what I'm
+							planning!
 						</p>
 
 						<ul
@@ -374,7 +350,7 @@ const items = LOCALES.map(({ code, label }) => ({
 								>
 									<div class="folio-list__item-pic">
 										<Image
-											src={habitPng}
+											src={pizza}
 											alt=""
 											loading="lazy"
 											decoding="async"
@@ -387,7 +363,7 @@ const items = LOCALES.map(({ code, label }) => ({
 											Full Stack App
 										</div>
 										<div class="folio-list__item-title">
-											Habit Tracker (Coming Soon)
+											Pizza Multi-Armed Bandit Simulator
 										</div>
 									</div>
 								</a>
@@ -477,23 +453,31 @@ const items = LOCALES.map(({ code, label }) => ({
 					<div id="modal-01" hidden>
 						<div class="modal-popup">
 							<Image
-								src={habitPng}
+								src={pizza}
 								alt=""
 								widths={[640, 960, 1280]}
 								sizes="100vw"
 							/>
 							<div class="modal-popup__desc">
-								<h5>Habit Tracker (Coming Soon)</h5>
+								<h5>Pizza Multi-Armed Bandit Simulator</h5>
 								<p>
-									A full stack app to help users build and
-									track daily habits with visual streaks,
-									analytics, and progress charts.
+									A full-stack simulator that visualizes
+									multi-armed bandit algorithms through an
+									interactive pizza-topping experiment. Users
+									can configure bandit types, upload custom
+									algorithms, and compare performance in real
+									time.
 								</p>
 								<ul class="modal-popup__cat">
-									<li>Branding</li>
-									<li>Product Design</li>
+									<li>Full-Stack</li>
 								</ul>
 							</div>
+
+							<a
+								href="https://github.com/kevinkeller021204/bandit"
+								target="_blank"
+								class="modal-popup__details">Project link</a
+							>
 						</div>
 					</div>
 
@@ -569,7 +553,9 @@ const items = LOCALES.map(({ code, label }) => ({
 
 				<div class="row testimonials">
 					<div class="column lg-12" data-animate-block>
-						<h2 class="text-pretitle" data-animate-el>My Values</h2>
+						<h2 class="text-pretitle with-line" data-animate-el>
+							My Values
+						</h2>
 						<p class="h1" data-animate-el>
 							Here's everything I value at a glance!
 						</p>
@@ -701,7 +687,7 @@ const items = LOCALES.map(({ code, label }) => ({
 			<section id="contact" class="s-contact target-section">
 				<div class="row contact-top">
 					<div class="column lg-12">
-						<h2 class="text-pretitle">Get In Touch</h2>
+						<h2 class="text-pretitle with-line">Get In Touch</h2>
 
 						<p class="h1">
 							I’d love to hear from you. <br />

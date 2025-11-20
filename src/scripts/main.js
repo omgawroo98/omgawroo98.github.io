@@ -150,18 +150,28 @@ if (typeof window !== 'undefined' && !window.__omarInit) {
             });
 
             const io = new IntersectionObserver(
-                entries => {
+                (entries) => {
                     entries.forEach(entry => {
                         const li = map.get(entry.target);
                         if (!li) return;
+
+                        console.log({
+                            id: entry.target,
+                            isIntersecting: entry.isIntersecting,
+                            ratio: entry.intersectionRatio,
+                            rootMargin: io.rootMargin,
+                            boundingClientRect: entry.boundingClientRect,
+                            rootBounds: entry.rootBounds
+                        });
+
                         if (entry.isIntersecting) li.classList.add('current');
                         else li.classList.remove('current');
                     });
                 },
-                { rootMargin: '-52% 0px -46% 0px', threshold: 0.01 }
+                { rootMargin: '-35% 0px -45% 0px', threshold: 0.01 }
             );
-
-            sections.forEach(sec => io.observe(sec));
+            console.log("sections", sections)
+            sections.forEach((sec) => io.observe(sec));
         }
 
         // --------------- VIEW ANIMATIONS (IO + Anime)

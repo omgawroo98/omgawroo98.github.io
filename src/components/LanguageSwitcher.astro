@@ -1,0 +1,80 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import globeIcon from "../assets/icons/icon-globe.svg";
+
+const { variant = "select", className = "" } = Astro.props;
+
+const LOCALES = [
+    { code: "en", label: "EN" },
+    { code: "de", label: "DE" },
+    { code: "fr", label: "FR" },
+    { code: "it", label: "IT" },
+];
+
+const items = LOCALES.map(({ code, label }) => ({
+    code,
+    label,
+    url: getRelativeLocaleUrl(code),
+}));
+
+// figure out current locale (reuse your existing logic)
+const current =
+    items.find(
+        ({ code }) =>
+            Astro.url.pathname.startsWith(`/${code}/`) ||
+            Astro.url.pathname === `/${code}`,
+    ) ?? items[0];
+---
+
+{
+    variant === "select" && (
+        <select
+            id="langSwitch"
+            class={`lang-select ${className}`}
+            aria-label="Language"
+            onchange="location.href=this.value"
+        >
+            {items.map(({ code, label, url }) => (
+                <option
+                    value={url}
+                    selected={
+                        Astro.url.pathname.startsWith(`/${code}/`) ||
+                        Astro.url.pathname === `/${code}`
+                    }
+                >
+                    {label}
+                </option>
+            ))}
+        </select>
+    )
+}
+
+{
+    variant === "icon" && (
+        <details class={`lang-mobile ${className}`}>
+            <summary class="lang-mobile__trigger">
+                <img
+                    src={globeIcon.src}
+                    alt="Globe Icon"
+                    class="lang-mobile__icon"
+                />
+
+                {/* optional, for screen readers only */}
+                <span class="sr-only">Language: {current.label}</span>
+            </summary>
+
+            <ul class="lang-mobile__menu">
+                {items.map(({ code, label, url }) => (
+                    <li>
+                        <a
+                            href={url}
+                            class={`lang-mobile__item${current.code === code ? " is-active" : ""}`}
+                        >
+                            {label}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </details>
+    )
+}
