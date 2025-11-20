@@ -1,10 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
-import { getRelativeLocaleUrl } from "astro:i18n";
 
 import myPic from "../../assets/MY-Picture.jpg";
-import habitPng from "../../assets/portfolio/habit-tracker.png";
+import pizza from "../../assets/portfolio/pizza.png";
 import cvPng from "../../assets/portfolio/cv.png";
 import dashPng from "../../assets/portfolio/dashboard.png";
 import financePng from "../../assets/portfolio/finance-tracker.png";
@@ -15,20 +14,7 @@ import gaugeSvg from "../../assets/avatars/gauge.svg";
 import sparkleSvg from "../../assets/avatars/sparkle.svg";
 
 import cvPdf from "../../assets/omar-elbakri-cv.pdf";
-
-const LOCALES = [
-	{ code: "en", label: "EN" },
-	{ code: "de", label: "DE" },
-	{ code: "fr", label: "FR" },
-	{ code: "it", label: "IT" },
-];
-
-// For each locale, get the URL to *this page* in that locale
-const items = LOCALES.map(({ code, label }) => ({
-	code,
-	label,
-	url: getRelativeLocaleUrl(code), // current page, different locale
-}));
+import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
 ---
 
 <BaseLayout title="Omar">
@@ -47,7 +33,14 @@ const items = LOCALES.map(({ code, label }) => ({
 		<header class="s-header">
 			<div class="header-mobile">
 				<span class="mobile-home-link"><a href="/">Omar.</a></span>
-				<a class="mobile-menu-toggle" href="#0"><span>Menu</span></a>
+				<div class="header-controls">
+					<LanguageSwitcher
+						variant="icon"
+						className="lang-switcher-mobile"
+					/>
+					<a class="mobile-menu-toggle" href="#0"><span>Menu</span></a
+					>
+				</div>
 			</div>
 
 			<div class="row wide main-nav-wrap">
@@ -68,29 +61,8 @@ const items = LOCALES.map(({ code, label }) => ({
 								>Dire bonjour</a
 							>
 						</li>
-						<li class="lang-switcher">
-							<select
-								id="langSwitch"
-								class="nav-select"
-								aria-label="Langue"
-							>
-								{
-									items.map(({ code, label, url }) => (
-										<option
-											value={url}
-											selected={
-												Astro.url.pathname.startsWith(
-													`/${code}/`,
-												) ||
-												Astro.url.pathname ===
-													`/${code}`
-											}
-										>
-											{label}
-										</option>
-									))
-								}
-							</select>
+						<li class="lang-switcher-desktop">
+							<LanguageSwitcher />
 						</li>
 
 						<script is:inline>
@@ -371,11 +343,11 @@ const items = LOCALES.map(({ code, label }) => ({
 				<div class="row works-portfolio">
 					<div class="column lg-12" data-animate-block>
 						<h2 class="text-pretitle" data-animate-el>
-							Bientôt disponible
+							Mon travail 🛠️
 						</h2>
 						<p class="h1" data-animate-el>
-							Je travaille encore sur quelques projets
-							passionnants. Revenez plus tard&nbsp;!
+							Voici ce sur quoi j'ai travaillé jusqu'à présent et
+							ce que je prévois de faire !
 						</p>
 
 						<ul
@@ -388,7 +360,7 @@ const items = LOCALES.map(({ code, label }) => ({
 								>
 									<div class="folio-list__item-pic">
 										<Image
-											src={habitPng}
+											src={pizza}
 											alt=""
 											loading="lazy"
 											decoding="async"
@@ -401,7 +373,8 @@ const items = LOCALES.map(({ code, label }) => ({
 											Application full-stack
 										</div>
 										<div class="folio-list__item-title">
-											Suivi d’habitudes (bientôt)
+											Simulateur de bandit manchot à
+											pizzas
 										</div>
 									</div>
 								</a>
@@ -492,23 +465,32 @@ const items = LOCALES.map(({ code, label }) => ({
 					<div id="modal-01" hidden>
 						<div class="modal-popup">
 							<Image
-								src={habitPng}
+								src={pizza}
 								alt=""
 								widths={[640, 960, 1280]}
 								sizes="100vw"
 							/>
 							<div class="modal-popup__desc">
-								<h5>Suivi d’habitudes (bientôt)</h5>
+								<h5>Simulateur de bandit manchot à pizzas</h5>
 								<p>
-									Une application full-stack pour aider les
-									utilisateurs à construire et suivre des
-									habitudes quotidiennes avec séries, analyses
-									et graphiques de progression.
+									Un simulateur complet qui visualise les
+									algorithmes de bandit manchot à plusieurs
+									bras à travers une expérience interactive de
+									garniture de pizza. Les utilisateurs peuvent
+									configurer les types de bandits, télécharger
+									des algorithmes personnalisés et comparer
+									les performances en temps réel.
 								</p>
 								<ul class="modal-popup__cat">
-									<li>Identité de marque</li>
-									<li>Design produit</li>
+									<li>full-stack</li>
 								</ul>
+
+								<a
+									href="https://github.com/kevinkeller021204/bandit"
+									target="_blank"
+									class="modal-popup__details"
+									>Lien du projet</a
+								>
 							</div>
 						</div>
 					</div>
